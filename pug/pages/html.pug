@@ -1,0 +1,239 @@
+extends ../parts/main.pug
+block title
+    - var title="Документация по HTML"
+    - var css='../../other/css/style-html.css'
+    - var html="active"
+block content
+  .nav-container
+    .nav-item
+      button 
+        h5.name Контент
+      .dropdown-content
+        a(href="#headings") Заголовки
+        a(href="#paragraphs") Параграфы
+        a(href="#nav") Навигация
+        a(href="#lists") Списки
+        a(href="#links") Ссылки (href)
+        a(href="#images") Изображения (src)
+        a(href="#tables") Таблицы (table)
+        a(href="#blockquote") Цитаты (blockquote)
+        a(href="#code") Код (code)
+        a(href="#strong") Полужирный текст (strong)
+        a(href="#video") Видео (video)
+        a(href="#audio") Аудио (audio)
+    .nav-item
+      button 
+        h5.name Остальное
+      .dropdown-content
+        a(href="#div") Блоки(div)
+        a(href="#classes-ids") Классы и ID
+        a(href="#forms") Формы (input)
+        a(href="#hr") Горизонтальные линии (hr)
+        a(href="#buttons") Кнопки (button)
+  main
+    section#headings
+      h2 Заголовки
+      p 
+        | Заголовки определяются с помощью тегов 
+        code &lt;h1&gt;
+        |  до 
+        code &lt;h6&gt;
+        | . Пример:
+      pre
+        code &lt;h1&gt;Это заголовок 1 уровня&lt;/h1&gt;
+      .example
+        h1 Это заголовок 1 уровня
+        h2 Это заголовок 2 уровня
+        h3 Это заголовок 3 уровня
+        h4 Это заголовок 4 уровня
+        h5 Это заголовок 5 уровня
+        h6 Это заголовок 6 уровня
+    section#paragraphs
+      h2 Параграфы
+      p 
+        | Параграфы текста определяются с помощью тега 
+        code &lt;p&gt;
+        | . Пример:
+      pre
+        code &lt;p&gt;Это пример параграфа текста.&lt;/p&gt;
+      .example
+        p Это пример параграфа текста.
+    section#div
+      h2 Блоки (div)
+      p 
+        | Блочные элементы создаются с помощью тега 
+        code &lt;div&gt;
+        | . Пример:
+      pre
+        code &lt;div&gt;Это блочный элемент.&lt;/div&gt;
+      .example
+        div(style="background-color: #f4f4f4; padding: 10px;") Это блочный элемент.
+    section#nav
+      h2 Навигация
+      p 
+        | Навигационные ссылки определяются с помощью тега 
+        code &lt;nav&gt;
+        | . Пример:
+      pre
+        code &lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Ссылка&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;
+      .example
+        nav
+          ul.ull
+            li.lii: a.aa(href="#") Ссылка
+    section#lists
+      h2 Списки
+      p 
+        | Списки создаются с помощью тегов 
+        code &lt;ul&gt;
+        |  и 
+        code &lt;li&gt;
+        | . Пример:
+      pre
+        code &lt;ul&gt;&lt;li&gt;Элемент списка&lt;/li&gt;&lt;/ul&gt;
+      .example
+        ul.ull
+          li.lii Элемент списка
+    section#classes-ids
+      h2 Классы и ID
+      p 
+        | Классы и ID используются для стилизации и идентификации элементов. Пример:
+      pre
+        code &lt;div class="example"&gt;Класс&lt;/div&gt;&lt;div id="unique"&gt;ID&lt;/div&gt;
+      .example
+        div.example Класс
+        div#unique ID
+    section#links
+      h2 Ссылки (href)
+      p 
+        | Ссылки создаются с помощью тега 
+        code &lt;a&gt;
+        |  и атрибута 
+        code href
+        | . Пример:
+      pre
+        code &lt;a href="https://example.com"&gt;Это ссылка&lt;/a&gt;
+      .example
+        a.aa(href="https://example.com") Это ссылка
+    section#images
+      h2 Изображения (src)
+      p 
+        | Изображения вставляются с помощью тега 
+        code &lt;img&gt;
+        |  и атрибута 
+        code src
+        | . Пример:
+      pre
+        code &lt;img src="image.jpg" alt="Пример изображения"&gt;
+      .example
+        img(src="https://via.placeholder.com/150" alt="Пример изображения")
+    section#forms
+      h2 Формы (input)
+      p 
+        | Формы создаются с помощью тега 
+        code &lt;form&gt;
+        |  и различных элементов 
+        code &lt;input&gt;
+        | . Пример:
+      pre
+        code &lt;form&gt;&lt;input type="text" placeholder="Введите текст"&gt;&lt;/form&gt;
+      .example
+        form
+          input(type="text" placeholder="Введите текст")
+    section#hr
+      h2 Горизонтальные линии (hr)
+      p 
+        | Горизонтальные линии создаются с помощью тега 
+        code &lt;hr&gt;
+        | . Пример:
+      pre
+        code &lt;hr&gt;
+      .example
+        hr
+    section#buttons
+      h2 Кнопки (button)
+      p 
+        | Кнопки создаются с помощью тега 
+        code &lt;button&gt;
+        | . Пример:
+      pre
+        code &lt;button&gt;Нажми меня&lt;/button&gt;
+      .example
+        button Нажми меня
+    section#tables
+      h2 Таблицы (table)
+      p 
+        | Таблицы создаются с помощью тега 
+        code &lt;table&gt;
+        |  и его подэлементов 
+        code &lt;tr&gt;
+        | , 
+        code &lt;th&gt;
+        |  и 
+        code &lt;td&gt;
+        | . Пример:
+      pre
+        code &lt;table&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Заголовок&lt;/th&gt;\n    &lt;th&gt;Заголовок&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Ячейка&lt;/td&gt;\n    &lt;td&gt;Ячейка&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;
+      .example
+        table
+          tr
+            th Заголовок
+            th Заголовок
+          tr
+            td Ячейка
+            td Ячейка
+    section#blockquote
+      h2 Цитаты (blockquote)
+      p 
+        | Цитаты создаются с помощью тега 
+        code &lt;blockquote&gt;
+        | . Пример:
+      pre
+        code &lt;blockquote&gt;Это пример цитаты.&lt;/blockquote&gt;
+      .example
+        blockquote Это пример цитаты.
+    section#code
+      h2 Код (code)
+      p 
+        | Для вставки кода используется тег 
+        code &lt;code&gt;
+        | . Пример:
+      pre
+        code &lt;code&gt;console.log('Hello, world!');&lt;/code&gt;
+      .example
+        code console.log('Hello, world!');
+    section#strong
+      h2 Полужирный текст (strong)
+      p 
+        | Полужирный текст создаётся с помощью тега 
+        code &lt;strong&gt;
+        | . Пример:
+      pre
+        code &lt;strong&gt;Это полужирный текст.&lt;/strong&gt;
+      .example
+        strong Это полужирный текст.
+    section#video
+      h2 Видео (video)
+      p 
+        | Видео вставляются с помощью тега 
+        code &lt;video&gt;
+        |  и атрибутов 
+        code src, controls, autoplay, loop
+        | . Пример:
+      pre
+        code &lt;video src="video.mp4" controls autoplay loop&gt;&lt;/video&gt;
+      .example
+        video(src="video.mp4" controls autoplay loop) Ваш браузер не поддерживает видео.
+    section#audio
+      h2 Аудио (audio)
+      p 
+        | Аудио вставляются с помощью тега 
+        code &lt;audio&gt;
+        |  и атрибутов 
+        code src, controls, autoplay, loop
+        | . Пример:
+      pre
+        code &lt;audio src="audio.mp3" controls autoplay loop&gt;&lt;/audio&gt;
+      .example
+        audio(src="audio.mp3" controls autoplay loop) Ваш браузер не поддерживает аудио.
+
+

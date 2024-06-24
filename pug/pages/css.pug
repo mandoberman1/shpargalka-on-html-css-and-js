@@ -1,0 +1,403 @@
+extends ../parts/main.pug
+block title
+    - var title="Документация по CSS"
+    - var css='../../other/css/style-css.css'
+    - var Css="active"
+block content
+  .nav-container
+    .nav-item
+      button 
+        h5.name Текст
+      .dropdown-content
+        a(href="#color") color
+        a(href="#font-size") font-size
+        a(href="#font-weight") font-weight
+        a(href="#line-height") line-height
+        a(href="#text-decoration") text-decoration
+        a(href="#text-align") text-align
+        a(href="#font-style") font-style
+        a(href="#font-family") font-family
+
+    .nav-item
+      button 
+        h5.name Изображения
+      .dropdown-content
+        a(href="#filter") filter
+        a(href="#") 
+        a(href="#") 
+        a(href="#border-radius") border-radius
+
+    .nav-item
+      button 
+        h5.name Общие
+      .dropdown-content
+        a(href="#width") width
+        a(href="#height") height
+        a(href="#min-weidth") min-weidth
+        a(href="#min-height") min-height
+        a(href="#max-width") max-width
+        a(href="#max-height") max-height
+        a(href="#background-image") background-image
+        a(href="#background-color") background-color
+
+    .nav-item
+      button
+        h5.name Позиционирование
+      .dropdown-content
+        a(href="#position") position
+        a(href="#margin") margin
+        a(href="#padding") padding
+        a(href="#flexbox") FlexBox
+
+    .nav-item
+      button 
+        h5.name Остальное
+      .dropdown-content
+        a(href="#psevdoelement") Псевдоэлементы
+        a(href="#psevdoselector") Псевдоселекторы
+        a(href="#visibility") visibility
+        a(href="#opacity") opacity
+    .nav-item
+      button 
+        h5.name Анимация
+      .dropdown-content
+        a(href="#animation") animation
+        a(href="#transform") transform
+
+  .container-box
+    p.about-example Интерактивный пример
+    .line1-arrow
+    .line2-arrow
+    #box Sample Text
+    input#styleInput(type='text', placeholder='Enter CSS property value')
+    select#propertySelect(style='display:none;')
+    #suggestionBox.suggestion-box(style='display:none;')
+  main
+    section#color.property
+      h2 color
+      p Задает цвет текста.
+      pre
+        code.
+          color: red; /* Устанавливает цвет текста красным */
+          color: #00FF00; /* Устанавливает цвет текста с помощью шестнадцатеричного значения */
+          color: rgb(0, 0, 255); /* Устанавливает цвет текста с помощью значения RGB */
+
+    section#font-size.property
+      h2 font-size
+      p Задает размер шрифта.
+      pre
+        code.
+          font-size: 16px; /* Устанавливает размер шрифта в 16 пикселей */
+          font-size: 1.5em; /* Устанавливает размер шрифта в 1.5 раза больше родительского элемента */
+          font-size: 120%; /* Устанавливает размер шрифта в 120% от родительского элемента */
+
+    section#font-weight.property
+      h2 font-weight
+      p Задает толщину (жирность) шрифта.
+      pre
+        code.
+          font-weight: normal; /* Обычный вес шрифта */
+          font-weight: bold; /* Жирный вес шрифта */
+          font-weight: 700; /* Числовое значение, представляющее жирный вес шрифта */
+
+    section#line-height.property
+      h2 line-height
+      p Задает высоту строк текста.
+      pre
+        code.
+          line-height: 1.5; /* Устанавливает высоту строк в 1.5 раза больше размера шрифта */
+          line-height: 20px; /* Устанавливает высоту строк в 20 пикселей */
+
+    section#text-decoration.property
+      h2 text-decoration
+      p Определяет оформление текста.
+      pre
+        code.
+          text-decoration: none; /* Без оформления текста */
+          text-decoration: underline; /* Подчеркнутый текст */
+          text-decoration: line-through; /* Перечеркнутый текст */
+          text-decoration: overline; /* Надчеркнутый текст */
+
+    section#text-align.property
+      h2 text-align
+      p Определяет горизонтальное выравнивание текста.
+      pre
+        code.
+          text-align: left; /* Выравнивание текста по левому краю */
+          text-align: center; /* Центрирование текста */
+          text-align: right; /* Выравнивание текста по правому краю */
+          text-align: justify; /* Растягивает строки так, чтобы каждая строка имела одинаковую ширину */
+
+    section#font-style.property
+      h2 font-style
+      p Определяет стиль шрифта для текста.
+      pre
+        code.
+          font-style: normal; /* Обычный стиль текста */
+          font-style: italic; /* Курсивный стиль текста */
+          font-style: oblique; /* Наклонный стиль текста */
+
+    section#font-family.property
+      h2 font-family
+      p Определяет шрифт для текста.
+      pre
+        code.
+          font-family: Arial, sans-serif; /* Устанавливает шрифт Arial с запасным вариантом sans-serif */
+          font-family: 'Times New Roman', serif; /* Устанавливает шрифт Times New Roman с запасным вариантом serif */
+
+    section#filter.property
+      h2 filter
+      p Применяет графические эффекты, такие как размытие или изменение цвета к элементу.
+      pre
+        code.
+          filter: blur(5px); /* Применяет эффект размытия */
+          filter: brightness(0.5); /* Уменьшает яркость */
+          filter: contrast(200%); /* Увеличивает контрастность */
+
+    section#border-radius.property
+      h2 border-radius
+      p Скругляет углы границы элемента.
+      pre
+        code.
+          border-radius: 10px; /* Устанавливает радиус скругления углов в 10 пикселей */
+          border-radius: 50%; /* Создает круг, если элемент квадратный */
+          border-radius: 10px 20px 30px 40px; /* Устанавливает разные радиусы для каждого угла */
+
+    section#width.property
+      h2 width
+      p Задает ширину элемента.
+      pre
+        code.
+          width: 100px; /* Устанавливает ширину в 100 пикселей */
+          width: 50%; /* Устанавливает ширину в 50% от родительского элемента */
+          width: auto; /* Автоматическая ширина, основанная на содержимом */
+
+    section#height.property
+      h2 height
+      p Задает высоту элемента.
+      pre
+        code.
+          height: 100px; /* Устанавливает высоту в 100 пикселей */
+          height: 50%; /* Устанавливает высоту в 50% от родительского элемента */
+          height: auto; /* Автоматическая высота, основанная на содержимом */
+
+    section#min-width.property
+      h2 min-width
+      p Задает минимальную ширину элемента.
+      pre
+        code.
+          min-width: 100px; /* Устанавливает минимальную ширину в 100 пикселей */
+          min-width: 50%; /* Устанавливает минимальную ширину в 50% от родительского элемента */
+
+    section#min-height.property
+      h2 min-height
+      p Задает минимальную высоту элемента.
+      pre
+        code.
+          min-height: 100px; /* Устанавливает минимальную высоту в 100 пикселей */
+          min-height: 50%; /* Устанавливает минимальную высоту в 50% от родительского элемента */
+
+    section#max-width.property
+      h2 max-width
+      p Задает максимальную ширину элемента.
+      pre
+        code.
+          max-width: 100px; /* Устанавливает максимальную ширину в 100 пикселей */
+          max-width: 50%; /* Устанавливает максимальную ширину в 50% от родительского элемента */
+
+    section#max-height.property
+      h2 max-height
+      p Задает максимальную высоту элемента.
+      pre
+        code.
+          max-height: 100px; /* Устанавливает максимальную высоту в 100 пикселей */
+          max-height: 50%; /* Устанавливает максимальную высоту в 50% от родительского элемента */
+
+    section#background-image.property
+      h2 background-image
+      p Устанавливает фоновое изображение для элемента. В поле ввода вы можете вставить ссылку на фото.
+      pre
+        code.
+          background-image: url('image.jpg или ссылка'); /* Устанавливает фоновое изображение */
+
+    section#background-color.property
+      h2 background-color
+      p Устанавливает фоновый цвет для элемента.
+      pre
+        code.
+          background-color: blue; /* Устанавливает синий фоновый цвет */
+          background-color: #00FF00; /* Устанавливает фоновый цвет с использованием шестнадцатеричного значения */
+          background-color: rgba(0, 0, 255, 0.5); /* Устанавливает фоновый цвет с использованием значения RGBA с 50% непрозрачностью */
+
+    section#position.property
+      h2 position
+      p
+        | Позволяет задавать тип позиционирования элемента. Доступны следующие значения:<br> POSITION:
+      pre
+        code.
+          position: absolute; /* Абсолютное позиционирование от краев страницы */
+          .class {
+            position: absolute;
+            top: 10px;
+          }
+
+          position: relative; /* Относительное позиционирование от начального местоположения */
+          .class {
+            position: relative;
+            left: 10px;
+          }
+
+          position: fixed; /* Фиксированное позиционирование от краев страницы, не реагирует на прокрутку */
+          .class {
+            position: fixed;
+            bottom: 100px;
+            z-index: 1; /* Порядок наложения */
+          }
+
+          position: sticky; /* Фиксированное позиционирование, останавливается в пределах родительского блока */
+          .class {
+            position: sticky;
+            top: 0;
+          }
+
+    section#margin.property
+      h2 margin
+      p Устанавливает область отступа с четырех сторон элемента.
+      pre
+        code.
+          margin: 10px; /* Устанавливает отступ в 10 пикселей со всех сторон */
+          margin: 10px 20px; /* Устанавливает вертикальные и горизонтальные отступы */
+          margin: 10px 20px 30px 40px; /* Устанавливает отступы для верха, справа, низа и слева */
+
+    section#padding.property
+      h2 padding
+      p Устанавливает область внутреннего отступа с четырех сторон элемента.
+      pre
+        code.
+          padding: 10px; /* Устанавливает внутренний отступ в 10 пикселей со всех сторон */
+          padding: 10px 20px; /* Устанавливает вертикальные и горизонтальные внутренние отступы */
+          padding: 10px 20px 30px 40px; /* Устанавливает внутренние отступы для верха, справа, низа и слева */
+
+    section#flexbox.property
+      h2 flexbox
+      p Модель раскладки для упорядочивания элементов предсказуемым образом.
+      pre
+        code.
+          display: flex; /* Включает раскладку flexbox */
+          .container {
+            display: flex;
+            justify-content: center; /* Центрирует элементы по горизонтали */
+            align-items: center; /* Центрирует элементы по вертикали */
+            flex-direction: row; /* Направление по умолчанию, может быть column для вертикальной раскладки */
+          }
+
+    section#animation.property
+      h2 animation
+      p Создание анимации
+      pre
+        code.
+          @keyframes имяАнимации{
+            from{                        /* Начало */
+              background-color: #1f7ecc;
+            }
+            50%{                               /* Середина */
+              background-color: darkslateblue;
+            }
+            to{                          /* Конец */
+              background-color: #1f7ecc;
+            }
+          }
+      p и её использование, а также задача параметров.
+      pre
+        code.
+          .class {
+            animation-name: имяАнимации;
+            animation-duration: 1s; /* Длительность */
+            animation-timing-function: linear; /* Скорость(linear-постоянная, ease-замедление=>ускорение=>замедление,
+              ease-in-медленно=>ускорение, ease-out-быстро=>замедление) */
+            animation-delay: 1s; /* Задержка */
+            animation-iteration-count: infinite; /* Кол-во повторение(infinite-бесконечно) */
+            animation-direcrion: normal/reverse; /* Направление */
+            animation-play-state: running/paused; /* Состояние анимации */
+
+            animation: имяАнимации 1s lunear 0ms infinite reverse paused; /* Сокращенная формула */
+          }
+      p Ес
+    section#pseudo-elements.property
+      h2 Псевдоэлементы
+      p Используются для стилизации определенных частей элемента.
+      pre
+        code.
+          ::before; /* Вставляет контент перед элементом */
+          .example::before {
+            content: "Префикс";
+          }
+
+          ::after; /* Вставляет контент после элемента */
+          .example::after {
+            content: "Суффикс";
+          }
+
+          ::first-line; /* Стилизует первую строку элемента */
+          .example::first-line {
+            font-weight: bold;
+          }
+
+          ::first-letter; /* Стилизует первую букву элемента */
+          .example::first-letter {
+            font-size: 2em;
+            color: red;
+          }
+
+    section#pseudo-classes.property
+      h2 Псевдоклассы
+      p Используются для определения особого состояния элемента.
+      pre
+        code.
+          :hover; /* Стилизует элемент при наведении курсора */
+          .example:hover {
+            color: blue;
+            animation-play-state: runnung; /* Запуск анимации */
+          }
+
+          :focus; /* Стилизует элемент, когда он получает фокус */
+          .example:focus {
+            outline: 2px solid green;
+          }
+
+          :nth-child(n); /* Стилизует n-й дочерний элемент */
+          .example:nth-child(2) {
+            background-color: yellow;
+          }
+
+          :not(selector); /* Стилизует элемент, не являющийся указанным селектором */
+          .example:not(.excluded) {
+            color: gray;
+          }
+
+    section#transform.property
+      h2 transform
+      p Применяет 2D или 3D трансформацию к элементу.
+      pre
+        code.
+          transform: translate(50px, 100px); /* Перемещает элемент */
+          transform: rotate(45deg); /* Поворачивает элемент */
+          transform: scale(2); /* Масштабирует элемент */
+          transform: skew(20deg, 10deg); /* Наклоняет элемент */
+
+    section#visibility.property
+      h2 visibility
+      p Определяет видимость элемента.
+      pre
+        code.
+          visibility: visible; /* По умолчанию, элемент виден */
+          visibility: hidden; /* Элемент скрыт, но занимает место в макете */
+
+    section#opacity.property
+      h2 opacity
+      p Устанавливает уровень прозрачности элемента.
+      pre
+        code.
+          opacity: 1; /* По умолчанию, полностью непрозрачно */
+          opacity: 0.5; /* 50% непрозрачность */
+          opacity: 0; /* Полностью прозрачно */

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация по HTML</title>
+    <link rel="stylesheet" href="../../other/css/style-html.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="navigation">
+      <nav class="na">
+        <div class="logo">Шпаргалки</div>
+        <ul class="nav-links">
+          <li class="li"><a class="a" href="index.html">Главная</a></li>
+          <li class="li"><a class="a active" href="html.html">HTML</a></li>
+          <li class="li"><a class="a" href="css.html">CSS</a></li>
+          <li class="li"><a class="a" href="js.html">JavaScript</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </div>
+    <div class="nav-container">
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Контент</h5>
+        </button>
+        <div class="dropdown-content"><a href="#headings">Заголовки</a><a href="#paragraphs">Параграфы</a><a href="#nav">Навигация</a><a href="#lists">Списки</a><a href="#links">Ссылки (href)</a><a href="#images">Изображения (src)</a><a href="#tables">Таблицы (table)</a><a href="#blockquote">Цитаты (blockquote)</a><a href="#code">Код (code)</a><a href="#strong">Полужирный текст (strong)</a><a href="#video">Видео (video)</a><a href="#audio">Аудио (audio)</a></div>
+      </div>
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Остальное</h5>
+        </button>
+        <div class="dropdown-content"><a href="#div">Блоки(div)</a><a href="#classes-ids">Классы и ID</a><a href="#forms">Формы (input)</a><a href="#hr">Горизонтальные линии (hr)</a><a href="#buttons">Кнопки (button)</a></div>
+      </div>
+    </div>
+    <main>
+      <section id="headings">
+        <h2>Заголовки</h2>
+        <p>
+           Заголовки определяются с помощью тегов <code>&lt;h1&gt;</code> до <code>&lt;h6&gt;</code>. Пример:</p>
+        <pre><code>&lt;h1&gt;Это заголовок 1 уровня&lt;/h1&gt;</code></pre>
+        <div class="example">
+          <h1>Это заголовок 1 уровня</h1>
+          <h2>Это заголовок 2 уровня</h2>
+          <h3>Это заголовок 3 уровня</h3>
+          <h4>Это заголовок 4 уровня</h4>
+          <h5>Это заголовок 5 уровня</h5>
+          <h6>Это заголовок 6 уровня</h6>
+        </div>
+      </section>
+      <section id="paragraphs">
+        <h2>Параграфы</h2>
+        <p>
+           Параграфы текста определяются с помощью тега <code>&lt;p&gt;</code>. Пример:</p>
+        <pre><code>&lt;p&gt;Это пример параграфа текста.&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>Это пример параграфа текста.</p>
+        </div>
+      </section>
+      <section id="div">
+        <h2>Блоки (div)</h2>
+        <p>
+           Блочные элементы создаются с помощью тега <code>&lt;div&gt;</code>. Пример:</p>
+        <pre><code>&lt;div&gt;Это блочный элемент.&lt;/div&gt;</code></pre>
+        <div class="example">
+          <div style="background-color: #f4f4f4; padding: 10px;">Это блочный элемент.</div>
+        </div>
+      </section>
+      <section id="nav">
+        <h2>Навигация</h2>
+        <p>
+           Навигационные ссылки определяются с помощью тега <code>&lt;nav&gt;</code>. Пример:</p>
+        <pre><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Ссылка&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;</code></pre>
+        <div class="example">
+          <nav>
+            <ul class="ull">
+              <li class="lii"><a class="aa" href="#">Ссылка</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section id="lists">
+        <h2>Списки</h2>
+        <p>
+           Списки создаются с помощью тегов <code>&lt;ul&gt;</code> и <code>&lt;li&gt;</code>. Пример:</p>
+        <pre><code>&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/li&gt;&lt;/ul&gt;</code></pre>
+        <div class="example">
+          <ul class="ull">
+            <li class="lii">Элемент списка</li>
+          </ul>
+        </div>
+      </section>
+      <section id="classes-ids">
+        <h2>Классы и ID</h2>
+        <p>
+           Классы и ID используются для стилизации и идентификации элементов. Пример:</p>
+        <pre><code>&lt;div class="example"&gt;Класс&lt;/div&gt;&lt;div id="unique"&gt;ID&lt;/div&gt;</code></pre>
+        <div class="example">
+          <div class="example">Класс</div>
+          <div id="unique">ID</div>
+        </div>
+      </section>
+      <section id="links">
+        <h2>Ссылки (href)</h2>
+        <p>
+           Ссылки создаются с помощью тега <code>&lt;a&gt;</code> и атрибута <code>href</code>. Пример:</p>
+        <pre><code>&lt;a href="https://example.com"&gt;Это ссылка&lt;/a&gt;</code></pre>
+        <div class="example"><a class="aa" href="https://example.com">Это ссылка</a></div>
+      </section>
+      <section id="images">
+        <h2>Изображения (src)</h2>
+        <p>
+           Изображения вставляются с помощью тега <code>&lt;img&gt;</code> и атрибута <code>src</code>. Пример:</p>
+        <pre><code>&lt;img src="image.jpg" alt="Пример изображения"&gt;</code></pre>
+        <div class="example"><img src="https://via.placeholder.com/150" alt="Пример изображения"></div>
+      </section>
+      <section id="forms">
+        <h2>Формы (input)</h2>
+        <p>
+           Формы создаются с помощью тега <code>&lt;form&gt;</code> и различных элементов <code>&lt;input&gt;</code>. Пример:</p>
+        <pre><code>&lt;form&gt;&lt;input type="text" placeholder="Введите текст"&gt;&lt;/form&gt;</code></pre>
+        <div class="example">
+          <form>
+            <input type="text" placeholder="Введите текст">
+          </form>
+        </div>
+      </section>
+      <section id="hr">
+        <h2>Горизонтальные линии (hr)</h2>
+        <p>
+           Горизонтальные линии создаются с помощью тега <code>&lt;hr&gt;</code>. Пример:</p>
+        <pre><code>&lt;hr&gt;</code></pre>
+        <div class="example">
+          <hr>
+        </div>
+      </section>
+      <section id="buttons">
+        <h2>Кнопки (button)</h2>
+        <p>
+           Кнопки создаются с помощью тега <code>&lt;button&gt;</code>. Пример:</p>
+        <pre><code>&lt;button&gt;Нажми меня&lt;/button&gt;</code></pre>
+        <div class="example">
+          <button>Нажми меня</button>
+        </div>
+      </section>
+      <section id="tables">
+        <h2>Таблицы (table)</h2>
+        <p>
+           Таблицы создаются с помощью тега <code>&lt;table&gt;</code> и его подэлементов <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> и <code>&lt;td&gt;</code>. Пример:</p>
+        <pre><code>&lt;table&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Заголовок&lt;/th&gt;\n    &lt;th&gt;Заголовок&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Ячейка&lt;/td&gt;\n    &lt;td&gt;Ячейка&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;</code></pre>
+        <div class="example">
+          <table>
+            <tr>
+              <th>Заголовок</th>
+              <th>Заголовок</th>
+            </tr>
+            <tr>
+              <td>Ячейка</td>
+              <td>Ячейка</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="blockquote">
+        <h2>Цитаты (blockquote)</h2>
+        <p>
+           Цитаты создаются с помощью тега <code>&lt;blockquote&gt;</code>. Пример:</p>
+        <pre><code>&lt;blockquote&gt;Это пример цитаты.&lt;/blockquote&gt;</code></pre>
+        <div class="example">
+          <blockquote>Это пример цитаты.</blockquote>
+        </div>
+      </section>
+      <section id="code">
+        <h2>Код (code)</h2>
+        <p>
+           Для вставки кода используется тег <code>&lt;code&gt;</code>. Пример:</p>
+        <pre><code>&lt;code&gt;console.log('Hello, world!');&lt;/code&gt;</code></pre>
+        <div class="example"><code>console.log('Hello, world!');</code></div>
+      </section>
+      <section id="strong">
+        <h2>Полужирный текст (strong)</h2>
+        <p>
+           Полужирный текст создаётся с помощью тега <code>&lt;strong&gt;</code>. Пример:</p>
+        <pre><code>&lt;strong&gt;Это полужирный текст.&lt;/strong&gt;</code></pre>
+        <div class="example"><strong>Это полужирный текст.</strong></div>
+      </section>
+      <section id="video">
+        <h2>Видео (video)</h2>
+        <p>
+           Видео вставляются с помощью тега <code>&lt;video&gt;</code> и атрибутов <code>src, controls, autoplay, loop</code>. Пример:</p>
+        <pre><code>&lt;video src="video.mp4" controls autoplay loop&gt;&lt;/video&gt;</code></pre>
+        <div class="example">
+          <video src="video.mp4" controls autoplay loop>Ваш браузер не поддерживает видео.</video>
+        </div>
+      </section>
+      <section id="audio">
+        <h2>Аудио (audio)</h2>
+        <p>
+           Аудио вставляются с помощью тега <code>&lt;audio&gt;</code> и атрибутов <code>src, controls, autoplay, loop</code>. Пример:</p>
+        <pre><code>&lt;audio src="audio.mp3" controls autoplay loop&gt;&lt;/audio&gt;</code></pre>
+        <div class="example">
+          <audio src="audio.mp3" controls autoplay loop>Ваш браузер не поддерживает аудио.</audio>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Шпаргалка HTML, CSS, JS</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../../other/js/script.js"></script>
+  </body>
+</html>

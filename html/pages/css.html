@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация по CSS</title>
+    <link rel="stylesheet" href="../../other/css/style-css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="navigation">
+      <nav class="na">
+        <div class="logo">Шпаргалки</div>
+        <ul class="nav-links">
+          <li class="li"><a class="a" href="index.html">Главная</a></li>
+          <li class="li"><a class="a" href="html.html">HTML</a></li>
+          <li class="li"><a class="a active" href="css.html">CSS</a></li>
+          <li class="li"><a class="a" href="js.html">JavaScript</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </div>
+    <div class="nav-container">
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Текст</h5>
+        </button>
+        <div class="dropdown-content"><a href="#color">color</a><a href="#font-size">font-size</a><a href="#font-weight">font-weight</a><a href="#line-height">line-height</a><a href="#text-decoration">text-decoration</a><a href="#text-align">text-align</a><a href="#font-style">font-style</a><a href="#font-family">font-family</a></div>
+      </div>
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Изображения</h5>
+        </button>
+        <div class="dropdown-content"><a href="#filter">filter</a><a href="#"> </a><a href="#"> </a><a href="#border-radius">border-radius</a></div>
+      </div>
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Общие</h5>
+        </button>
+        <div class="dropdown-content"><a href="#width">width</a><a href="#height">height</a><a href="#min-weidth">min-weidth</a><a href="#min-height">min-height</a><a href="#max-width">max-width</a><a href="#max-height">max-height</a><a href="#background-image">background-image</a><a href="#background-color">background-color</a></div>
+      </div>
+      <div class="nav-item">
+        <button>
+          <h5 class="name">Позиционирование</h5>
+        </button>
+        <div class="dropdown-content"><a href="#position">position</a><a href="#margin">margin</a><a href="#padding">padding</a><a href="#flexbox">FlexBox</a></div>
+      </div>
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Остальное</h5>
+        </button>
+        <div class="dropdown-content"><a href="#psevdoelement">Псевдоэлементы</a><a href="#psevdoselector">Псевдоселекторы</a><a href="#visibility">visibility</a><a href="#opacity">opacity</a></div>
+      </div>
+      <div class="nav-item">
+        <button> 
+          <h5 class="name">Анимация</h5>
+        </button>
+        <div class="dropdown-content"><a href="#animation">animation</a><a href="#transform">transform</a></div>
+      </div>
+    </div>
+    <div class="container-box">
+      <p class="about-example">Интерактивный пример</p>
+      <div class="line1-arrow"></div>
+      <div class="line2-arrow"></div>
+      <div id="box">Sample Text</div>
+      <input id="styleInput" type="text" placeholder="Enter CSS property value">
+      <select id="propertySelect" style="display:none;"></select>
+      <div class="suggestion-box" id="suggestionBox" style="display:none;"></div>
+    </div>
+    <main>
+      <section class="property" id="color">
+        <h2>color</h2>
+        <p>Задает цвет текста.</p>
+        <pre><code>color: red; /* Устанавливает цвет текста красным */
+color: #00FF00; /* Устанавливает цвет текста с помощью шестнадцатеричного значения */
+color: rgb(0, 0, 255); /* Устанавливает цвет текста с помощью значения RGB */
+</code></pre>
+      </section>
+      <section class="property" id="font-size">
+        <h2>font-size</h2>
+        <p>Задает размер шрифта.</p>
+        <pre><code>font-size: 16px; /* Устанавливает размер шрифта в 16 пикселей */
+font-size: 1.5em; /* Устанавливает размер шрифта в 1.5 раза больше родительского элемента */
+font-size: 120%; /* Устанавливает размер шрифта в 120% от родительского элемента */
+</code></pre>
+      </section>
+      <section class="property" id="font-weight">
+        <h2>font-weight</h2>
+        <p>Задает толщину (жирность) шрифта.</p>
+        <pre><code>font-weight: normal; /* Обычный вес шрифта */
+font-weight: bold; /* Жирный вес шрифта */
+font-weight: 700; /* Числовое значение, представляющее жирный вес шрифта */
+</code></pre>
+      </section>
+      <section class="property" id="line-height">
+        <h2>line-height</h2>
+        <p>Задает высоту строк текста.</p>
+        <pre><code>line-height: 1.5; /* Устанавливает высоту строк в 1.5 раза больше размера шрифта */
+line-height: 20px; /* Устанавливает высоту строк в 20 пикселей */
+</code></pre>
+      </section>
+      <section class="property" id="text-decoration">
+        <h2>text-decoration</h2>
+        <p>Определяет оформление текста.</p>
+        <pre><code>text-decoration: none; /* Без оформления текста */
+text-decoration: underline; /* Подчеркнутый текст */
+text-decoration: line-through; /* Перечеркнутый текст */
+text-decoration: overline; /* Надчеркнутый текст */
+</code></pre>
+      </section>
+      <section class="property" id="text-align">
+        <h2>text-align</h2>
+        <p>Определяет горизонтальное выравнивание текста.</p>
+        <pre><code>text-align: left; /* Выравнивание текста по левому краю */
+text-align: center; /* Центрирование текста */
+text-align: right; /* Выравнивание текста по правому краю */
+text-align: justify; /* Растягивает строки так, чтобы каждая строка имела одинаковую ширину */
+</code></pre>
+      </section>
+      <section class="property" id="font-style">
+        <h2>font-style</h2>
+        <p>Определяет стиль шрифта для текста.</p>
+        <pre><code>font-style: normal; /* Обычный стиль текста */
+font-style: italic; /* Курсивный стиль текста */
+font-style: oblique; /* Наклонный стиль текста */
+</code></pre>
+      </section>
+      <section class="property" id="font-family">
+        <h2>font-family</h2>
+        <p>Определяет шрифт для текста.</p>
+        <pre><code>font-family: Arial, sans-serif; /* Устанавливает шрифт Arial с запасным вариантом sans-serif */
+font-family: 'Times New Roman', serif; /* Устанавливает шрифт Times New Roman с запасным вариантом serif */
+</code></pre>
+      </section>
+      <section class="property" id="filter">
+        <h2>filter</h2>
+        <p>Применяет графические эффекты, такие как размытие или изменение цвета к элементу.</p>
+        <pre><code>filter: blur(5px); /* Применяет эффект размытия */
+filter: brightness(0.5); /* Уменьшает яркость */
+filter: contrast(200%); /* Увеличивает контрастность */
+</code></pre>
+      </section>
+      <section class="property" id="border-radius">
+        <h2>border-radius</h2>
+        <p>Скругляет углы границы элемента.</p>
+        <pre><code>border-radius: 10px; /* Устанавливает радиус скругления углов в 10 пикселей */
+border-radius: 50%; /* Создает круг, если элемент квадратный */
+border-radius: 10px 20px 30px 40px; /* Устанавливает разные радиусы для каждого угла */
+</code></pre>
+      </section>
+      <section class="property" id="width">
+        <h2>width</h2>
+        <p>Задает ширину элемента.</p>
+        <pre><code>width: 100px; /* Устанавливает ширину в 100 пикселей */
+width: 50%; /* Устанавливает ширину в 50% от родительского элемента */
+width: auto; /* Автоматическая ширина, основанная на содержимом */
+</code></pre>
+      </section>
+      <section class="property" id="height">
+        <h2>height</h2>
+        <p>Задает высоту элемента.</p>
+        <pre><code>height: 100px; /* Устанавливает высоту в 100 пикселей */
+height: 50%; /* Устанавливает высоту в 50% от родительского элемента */
+height: auto; /* Автоматическая высота, основанная на содержимом */
+</code></pre>
+      </section>
+      <section class="property" id="min-width">
+        <h2>min-width</h2>
+        <p>Задает минимальную ширину элемента.</p>
+        <pre><code>min-width: 100px; /* Устанавливает минимальную ширину в 100 пикселей */
+min-width: 50%; /* Устанавливает минимальную ширину в 50% от родительского элемента */
+</code></pre>
+      </section>
+      <section class="property" id="min-height">
+        <h2>min-height</h2>
+        <p>Задает минимальную высоту элемента.</p>
+        <pre><code>min-height: 100px; /* Устанавливает минимальную высоту в 100 пикселей */
+min-height: 50%; /* Устанавливает минимальную высоту в 50% от родительского элемента */
+</code></pre>
+      </section>
+      <section class="property" id="max-width">
+        <h2>max-width</h2>
+        <p>Задает максимальную ширину элемента.</p>
+        <pre><code>max-width: 100px; /* Устанавливает максимальную ширину в 100 пикселей */
+max-width: 50%; /* Устанавливает максимальную ширину в 50% от родительского элемента */
+</code></pre>
+      </section>
+      <section class="property" id="max-height">
+        <h2>max-height</h2>
+        <p>Задает максимальную высоту элемента.</p>
+        <pre><code>max-height: 100px; /* Устанавливает максимальную высоту в 100 пикселей */
+max-height: 50%; /* Устанавливает максимальную высоту в 50% от родительского элемента */
+</code></pre>
+      </section>
+      <section class="property" id="background-image">
+        <h2>background-image</h2>
+        <p>Устанавливает фоновое изображение для элемента. В поле ввода вы можете вставить ссылку на фото.</p>
+        <pre><code>background-image: url('image.jpg или ссылка'); /* Устанавливает фоновое изображение */
+</code></pre>
+      </section>
+      <section class="property" id="background-color">
+        <h2>background-color</h2>
+        <p>Устанавливает фоновый цвет для элемента.</p>
+        <pre><code>background-color: blue; /* Устанавливает синий фоновый цвет */
+background-color: #00FF00; /* Устанавливает фоновый цвет с использованием шестнадцатеричного значения */
+background-color: rgba(0, 0, 255, 0.5); /* Устанавливает фоновый цвет с использованием значения RGBA с 50% непрозрачностью */
+</code></pre>
+      </section>
+      <section class="property" id="position">
+        <h2>position</h2>
+        <p>Позволяет задавать тип позиционирования элемента. Доступны следующие значения:<br> POSITION:</p>
+        <pre><code>position: absolute; /* Абсолютное позиционирование от краев страницы */
+.class {
+  position: absolute;
+  top: 10px;
+}
+
+position: relative; /* Относительное позиционирование от начального местоположения */
+.class {
+  position: relative;
+  left: 10px;
+}
+
+position: fixed; /* Фиксированное позиционирование от краев страницы, не реагирует на прокрутку */
+.class {
+  position: fixed;
+  bottom: 100px;
+  z-index: 1; /* Порядок наложения */
+}
+
+position: sticky; /* Фиксированное позиционирование, останавливается в пределах родительского блока */
+.class {
+  position: sticky;
+  top: 0;
+}
+</code></pre>
+      </section>
+      <section class="property" id="margin">
+        <h2>margin</h2>
+        <p>Устанавливает область отступа с четырех сторон элемента.</p>
+        <pre><code>margin: 10px; /* Устанавливает отступ в 10 пикселей со всех сторон */
+margin: 10px 20px; /* Устанавливает вертикальные и горизонтальные отступы */
+margin: 10px 20px 30px 40px; /* Устанавливает отступы для верха, справа, низа и слева */
+</code></pre>
+      </section>
+      <section class="property" id="padding">
+        <h2>padding</h2>
+        <p>Устанавливает область внутреннего отступа с четырех сторон элемента.</p>
+        <pre><code>padding: 10px; /* Устанавливает внутренний отступ в 10 пикселей со всех сторон */
+padding: 10px 20px; /* Устанавливает вертикальные и горизонтальные внутренние отступы */
+padding: 10px 20px 30px 40px; /* Устанавливает внутренние отступы для верха, справа, низа и слева */
+</code></pre>
+      </section>
+      <section class="property" id="flexbox">
+        <h2>flexbox</h2>
+        <p>Модель раскладки для упорядочивания элементов предсказуемым образом.</p>
+        <pre><code>display: flex; /* Включает раскладку flexbox */
+.container {
+  display: flex;
+  justify-content: center; /* Центрирует элементы по горизонтали */
+  align-items: center; /* Центрирует элементы по вертикали */
+  flex-direction: row; /* Направление по умолчанию, может быть column для вертикальной раскладки */
+}
+</code></pre>
+      </section>
+      <section class="property" id="animation">
+        <h2>animation</h2>
+        <p>Создание анимации</p>
+        <pre><code>@keyframes имяАнимации{
+  from{                        /* Начало */
+    background-color: #1f7ecc;
+  }
+  50%{                               /* Середина */
+    background-color: darkslateblue;
+  }
+  to{                          /* Конец */
+    background-color: #1f7ecc;
+  }
+}</code></pre>
+        <p>и её использование, а также задача параметров.</p>
+        <pre><code>.class {
+  animation-name: имяАнимации;
+  animation-duration: 1s; /* Длительность */
+  animation-timing-function: linear; /* Скорость(linear-постоянная, ease-замедление=>ускорение=>замедление,
+    ease-in-медленно=>ускорение, ease-out-быстро=>замедление) */
+  animation-delay: 1s; /* Задержка */
+  animation-iteration-count: infinite; /* Кол-во повторение(infinite-бесконечно) */
+  animation-direcrion: normal/reverse; /* Направление */
+  animation-play-state: running/paused; /* Состояние анимации */
+
+  animation: имяАнимации 1s lunear 0ms infinite reverse paused; /* Сокращенная формула */
+}</code></pre>
+        <p>Ес</p>
+      </section>
+      <section class="property" id="pseudo-elements">
+        <h2>Псевдоэлементы</h2>
+        <p>Используются для стилизации определенных частей элемента.</p>
+        <pre><code>::before; /* Вставляет контент перед элементом */
+.example::before {
+  content: "Префикс";
+}
+
+::after; /* Вставляет контент после элемента */
+.example::after {
+  content: "Суффикс";
+}
+
+::first-line; /* Стилизует первую строку элемента */
+.example::first-line {
+  font-weight: bold;
+}
+
+::first-letter; /* Стилизует первую букву элемента */
+.example::first-letter {
+  font-size: 2em;
+  color: red;
+}
+</code></pre>
+      </section>
+      <section class="property" id="pseudo-classes">
+        <h2>Псевдоклассы</h2>
+        <p>Используются для определения особого состояния элемента.</p>
+        <pre><code>:hover; /* Стилизует элемент при наведении курсора */
+.example:hover {
+  color: blue;
+  animation-play-state: runnung; /* Запуск анимации */
+}
+
+:focus; /* Стилизует элемент, когда он получает фокус */
+.example:focus {
+  outline: 2px solid green;
+}
+
+:nth-child(n); /* Стилизует n-й дочерний элемент */
+.example:nth-child(2) {
+  background-color: yellow;
+}
+
+:not(selector); /* Стилизует элемент, не являющийся указанным селектором */
+.example:not(.excluded) {
+  color: gray;
+}
+</code></pre>
+      </section>
+      <section class="property" id="transform">
+        <h2>transform</h2>
+        <p>Применяет 2D или 3D трансформацию к элементу.</p>
+        <pre><code>transform: translate(50px, 100px); /* Перемещает элемент */
+transform: rotate(45deg); /* Поворачивает элемент */
+transform: scale(2); /* Масштабирует элемент */
+transform: skew(20deg, 10deg); /* Наклоняет элемент */
+</code></pre>
+      </section>
+      <section class="property" id="visibility">
+        <h2>visibility</h2>
+        <p>Определяет видимость элемента.</p>
+        <pre><code>visibility: visible; /* По умолчанию, элемент виден */
+visibility: hidden; /* Элемент скрыт, но занимает место в макете */
+</code></pre>
+      </section>
+      <section class="property" id="opacity">
+        <h2>opacity</h2>
+        <p>Устанавливает уровень прозрачности элемента.</p>
+        <pre><code>opacity: 1; /* По умолчанию, полностью непрозрачно */
+opacity: 0.5; /* 50% непрозрачность */
+opacity: 0; /* Полностью прозрачно */</code></pre>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Шпаргалка HTML, CSS, JS</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../../other/js/script.js"></script>
+  </body>
+</html>

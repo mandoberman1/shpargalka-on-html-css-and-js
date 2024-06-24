@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.active{
+    text-decoration: underline !important;
+}
+
+.navigation {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+.na {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.a{
+    margin-left: 15px;
+    font-family: 'Roboto';
+    position: relative;
+    top: 10px;
+}
+
+.nav-links .a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .a:hover {
+    color: #ff6347;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+}
+
+.burger div{
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background: #333;
+        transition: left 0.5s ease-in-out;
+    }
+    .a{
+        margin-left: -15px;
+        top: 0px;
+    }
+    .nav-links.nav-active {
+        left: 0;
+    }
+
+    .nav-links .li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
