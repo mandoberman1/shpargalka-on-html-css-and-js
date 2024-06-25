@@ -58,6 +58,7 @@ const properties = {
   'background-image': ['url(...)'],
   'margin': ['0', '5px', '10px', '15px', '20px'],
   'padding': ['0', '5px', '10px', '15px', '20px'],
+  'flexbox': ['flex-direction: row', 'justify-content: center', 'align-items: center'],
   'animation': ['none', 'flash 1s linear 2s infinite alternate'],
   'transform': ['none', 'rotate(45deg)', 'scale(1.5)'],
   'visibility': ['visible', 'hidden'],
@@ -98,6 +99,7 @@ function showSuggestions(property) {
           suggestionItem.addEventListener('click', () => {
               input.value = value;
               applyStyle(property, value);
+              suggestionBox.style.display = 'none';
           });
           suggestionBox.appendChild(suggestionItem);
       });
@@ -160,33 +162,39 @@ Object.keys(properties).forEach(function(prop) {
 // Обновляем позицию suggestionBox при изменении размеров окна
 window.addEventListener('resize', positionSuggestionBox);
 
-input.addEventListener("input", () => {
-  let selectedProperty = input.getAttribute('data-selected-property');
-  if (selectedProperty) {
-      Object.keys(properties).forEach(prop => {
-          let element = document.querySelector(`#${prop}`);
-          if (element) {
-              let distance = getElementDistance(element);
-              let containerMiddlePos = getElementMiddleY(container);
-              if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom) {
-                  let styleValue = input.value;
-                  if (Object.keys(properties).includes(selectedProperty) && styleValue) {
-                      applyStyle(selectedProperty, styleValue);
-                  }
-              } else {
-                  if (Object.keys(properties).includes(selectedProperty)) {
-                      if (selectedProperty === 'background-image') {
-                          box.style.backgroundImage = '';
-                      } else {
-                          box.style[selectedProperty] = ''; // Remove the style
-                      }
-                      console.log(`Removed ${selectedProperty} from the box`);
-                  }
-              }
-          }
-      });
-  }
-});
+Object.keys(properties).forEach(function(prop) {
+    let element = document.querySelector(`#${prop}`);
+    if (element) {
+        let distance = getElementDistance(element);
+        window.addEventListener('input', function() {
+            let containerMiddlePos = getElementMiddleY(container);
+            if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom) {
+                if (properties[prop].length > 1) {
+                    handleComplexProperties(prop);
+                } else {
+                    input.setAttribute('data-selected-property', prop);
+                    input.setAttribute('placeholder', `Enter value for ${prop}`);
+                    positionSuggestionBox(); // Позиционируем suggestionBox
+                    showSuggestions(prop);
+                }
+                let styleValue = input.value;
+                let selectedProperty = input.getAttribute('data-selected-property');
+                if (Object.keys(properties).includes(selectedProperty) && styleValue) {
+                    applyStyle(selectedProperty, styleValue);
+                }
+            } else {
+                if (Object.keys(properties).includes(prop)) {
+                    if (prop === 'background-image') {
+                        box.style.backgroundImage = '';
+                    } else {
+                        box.style[prop] = ''; // Remove the style
+                    }
+                    console.log(`Removed ${prop} from the box`);
+                }
+            }
+        });
+    }
+  });
 
 input.addEventListener("input", () => {
   if (input.value === '') {
