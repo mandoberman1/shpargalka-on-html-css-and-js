@@ -56,13 +56,9 @@ const properties = {
   'max-height': ['100px', '200px', '50%'],
   'background-color': ['red', 'blue', 'green', 'yellow', 'black', 'white'],
   'background-image': ['url(...)'],
-  'position': ['static', 'relative', 'absolute', 'fixed', 'sticky'],
   'margin': ['0', '5px', '10px', '15px', '20px'],
   'padding': ['0', '5px', '10px', '15px', '20px'],
-  'flexbox': ['flex-direction: row', 'justify-content: center', 'align-items: center'],
-  'animation': ['none', 'example 5s linear 2s infinite alternate'],
-  'pseudo-classes': [':hover', ':focus', ':active'],
-  'pseudo-elements': ['::before', '::after'],
+  'animation': ['none', 'flash 1s linear 2s infinite alternate'],
   'transform': ['none', 'rotate(45deg)', 'scale(1.5)'],
   'visibility': ['visible', 'hidden'],
   'opacity': ['0', '0.5', '1']
@@ -102,7 +98,6 @@ function showSuggestions(property) {
           suggestionItem.addEventListener('click', () => {
               input.value = value;
               applyStyle(property, value);
-              suggestionBox.style.display = 'none';
           });
           suggestionBox.appendChild(suggestionItem);
       });
