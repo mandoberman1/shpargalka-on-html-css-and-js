@@ -58,7 +58,6 @@ const properties = {
   'background-image': ['url(...)'],
   'margin': ['0', '5px', '10px', '15px', '20px'],
   'padding': ['0', '5px', '10px', '15px', '20px'],
-  'flexbox': ['flex-direction: row', 'justify-content: center', 'align-items: center'],
   'animation': ['none', 'flash 1s linear 2s infinite alternate'],
   'transform': ['none', 'rotate(45deg)', 'scale(1.5)'],
   'visibility': ['visible', 'hidden'],
