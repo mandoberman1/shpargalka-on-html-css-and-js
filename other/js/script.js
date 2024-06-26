@@ -16,12 +16,12 @@ function redirectToPage(event) {
       } 
       else{
         var previousPage = document.referrer;  // получение предыдущего url
-        window.location.href = previousPage; // перенаправление на предыдущей url
-        }
+        window.location.href = previousPage; // перенаправление на предыдущий url
       }
     }
+}
   
-  document.addEventListener('keydown', redirectToPage);
+document.addEventListener('keydown', redirectToPage);
 
 var accordions = document.getElementsByClassName("accordion");
 for (var i = 0; i < accordions.length; i++) {
@@ -34,30 +34,6 @@ for (var i = 0; i < accordions.length; i++) {
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     };
-}
-  
-function applyChanges() {
-    const styleContent = document.getElementById('style').value;
-    const scriptContent = document.getElementById('script').value;
-
-    // Применение стилей
-    let styleElement = document.getElementById('dynamicStyle');
-    if (!styleElement) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'dynamicStyle';
-        document.head.appendChild(styleElement);
-    }
-    styleElement.innerHTML = styleContent;
-
-    // Применение скриптов
-    let scriptElement = document.getElementById('dynamicScript');
-    if (scriptElement) {
-        scriptElement.remove();
-    }
-    scriptElement = document.createElement('script');
-    scriptElement.id = 'dynamicScript';
-    scriptElement.innerHTML = scriptContent;
-    document.body.appendChild(scriptElement);
 }
 
 
@@ -79,9 +55,13 @@ const properties = {
   'max-width': ['100px', '200px', '50%'],
   'max-height': ['100px', '200px', '50%'],
   'background-color': ['red', 'blue', 'green', 'yellow', 'black', 'white'],
-  'background-image': ['url(...)'],
+  'background-image': ['Введите ссылку'],
   'margin': ['0', '5px', '10px', '15px', '20px'],
   'padding': ['0', '5px', '10px', '15px', '20px'],
+  'position':['0'],
+  'pseudo-classes': ['0'],
+  'pseudo-elements':['0'],
+  'flexbox': ['flex-direction: row', 'justify-content: center', 'align-items: center'],
   'animation': ['none', 'flash 1s linear 2s infinite alternate'],
   'transform': ['none', 'rotate(45deg)', 'scale(1.5)'],
   'visibility': ['visible', 'hidden'],
@@ -96,7 +76,7 @@ let suggestionBox = document.querySelector('#suggestionBox');
 // Функция для позиционирования suggestionBox
 function positionSuggestionBox() {
   suggestionBox.style.top = `${input.offsetTop + input.offsetHeight}px`;
-  suggestionBox.style.left = `${input.offsetLeft}px`;
+  suggestionBox.style.right = `${input.offsetRight}px`;
 }
 
 function getElementDistance(element) {
@@ -115,35 +95,33 @@ function getElementMiddleY(element) {
 function showSuggestions(property) {
   suggestionBox.innerHTML = '';
   if (properties[property]) {
-      properties[property].forEach(value => {
-          let suggestionItem = document.createElement('div');
-          suggestionItem.textContent = value;
-          suggestionItem.classList.add('suggestion-item');
-          suggestionItem.addEventListener('click', () => {
-              input.value = value;
-              applyStyle(property, value);
-              suggestionBox.style.display = 'none';
-          });
-          suggestionBox.appendChild(suggestionItem);
+    properties[property].forEach(value => {
+      let suggestionItem = document.createElement('div');
+      suggestionItem.textContent = value;
+      suggestionItem.classList.add('suggestion-item');
+      suggestionItem.addEventListener('click', () => {
+        input.value = value;
+        applyStyle(property, value);
       });
-      suggestionBox.style.display = 'block';
+      suggestionBox.appendChild(suggestionItem);
+    });
+    suggestionBox.style.display = 'block';
   }
 }
 
 function handleComplexProperties(prop) {
   input.setAttribute('data-selected-property', prop);
-  input.setAttribute('placeholder', `Enter value for ${prop}`);
-  suggestionBox.style.display = 'none';
+  input.setAttribute('placeholder', `Значение ${prop}`);
   if (properties[prop]) {
-      showSuggestions(prop);
+    showSuggestions(prop);
   }
 }
 
 function applyStyle(property, value) {
   if (property === 'background-image') {
-      box.style.backgroundImage = `url(${value})`;
+    box.style.backgroundImage = `url(${value})`;
   } else {
-      box.style[property] = value;
+    box.style[property] = value
   }
   console.log(`Applied ${property}: ${value} to the box`);
 }
@@ -151,34 +129,39 @@ function applyStyle(property, value) {
 Object.keys(properties).forEach(function(prop) {
   let element = document.querySelector(`#${prop}`);
   if (element) {
-      let distance = getElementDistance(element);
-      window.addEventListener('scroll', function() {
-          let containerMiddlePos = getElementMiddleY(container);
-          if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom) {
-              if (properties[prop].length > 1) {
-                  handleComplexProperties(prop);
-              } else {
-                  input.setAttribute('data-selected-property', prop);
-                  input.setAttribute('placeholder', `Enter value for ${prop}`);
-                  positionSuggestionBox(); // Позиционируем suggestionBox
-                  showSuggestions(prop);
-              }
-              let styleValue = input.value;
-              let selectedProperty = input.getAttribute('data-selected-property');
-              if (Object.keys(properties).includes(selectedProperty) && styleValue) {
-                  applyStyle(selectedProperty, styleValue);
-              }
+    let distance = getElementDistance(element);
+    window.addEventListener('scroll', function() {
+      let containerMiddlePos = getElementMiddleY(container);
+      // Проверяем находится ли контейнер посередине flexbox, position, pseudo-classes, pseudo-elements
+      if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom &&
+        (prop === 'flexbox' || prop === 'position' || prop === 'pseudo-classes' || prop === 'pseudo-elements')) {
+        input.setAttribute('placeholder', 'Выбрано сложное свойство');
+        suggestionBox.style.display = 'none';
+      } else if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom) {
+        if (properties[prop].length > 1) {
+          handleComplexProperties(prop);
+        } else {
+          input.setAttribute('data-selected-property', prop);
+          input.setAttribute('placeholder', `Значение ${prop}`);
+          positionSuggestionBox(); // Позиционируем suggestionBox
+          showSuggestions(prop);
+        }
+        let styleValue = input.value;
+        let selectedProperty = input.getAttribute('data-selected-property');
+        if (Object.keys(properties).includes(selectedProperty) && styleValue) {
+          applyStyle(selectedProperty, styleValue);
+        }
+      } else {
+        if (Object.keys(properties).includes(prop)) {
+          if (prop === 'background-image') {
+            box.style.backgroundImage = '';
           } else {
-              if (Object.keys(properties).includes(prop)) {
-                  if (prop === 'background-image') {
-                      box.style.backgroundImage = '';
-                  } else {
-                      box.style[prop] = ''; // Remove the style
-                  }
-                  console.log(`Removed ${prop} from the box`);
-              }
+            box.style[prop] = ''; // Удаляем стиль
           }
-      });
+          console.log(`Removed ${prop} from the box`);
+        }
+      }
+    });
   }
 });
 
@@ -188,49 +171,54 @@ window.addEventListener('resize', positionSuggestionBox);
 Object.keys(properties).forEach(function(prop) {
     let element = document.querySelector(`#${prop}`);
     if (element) {
-        let distance = getElementDistance(element);
-        window.addEventListener('input', function() {
-            let containerMiddlePos = getElementMiddleY(container);
-            if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom) {
-                if (properties[prop].length > 1) {
-                    handleComplexProperties(prop);
-                } else {
-                    input.setAttribute('data-selected-property', prop);
-                    input.setAttribute('placeholder', `Enter value for ${prop}`);
-                    positionSuggestionBox(); // Позиционируем suggestionBox
-                    showSuggestions(prop);
-                }
-                let styleValue = input.value;
-                let selectedProperty = input.getAttribute('data-selected-property');
-                if (Object.keys(properties).includes(selectedProperty) && styleValue) {
-                    applyStyle(selectedProperty, styleValue);
-                }
+      let distance = getElementDistance(element);
+      window.addEventListener('input', function() {
+        let containerMiddlePos = getElementMiddleY(container);
+        // Проверяем находится ли контейнер посередине flexbox, position, pseudo-classes, pseudo-elements
+        if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom &&
+          (prop === 'flexbox' || prop === 'position' || prop === 'pseudo-classes' || prop === 'pseudo-elements')) {
+          input.setAttribute('placeholder', 'Выбрано сложное свойство');
+          suggestionBox.style.display = 'none';
+        } else if (containerMiddlePos > distance.top && containerMiddlePos < distance.bottom) {
+          if (properties[prop].length > 1) {
+            handleComplexProperties(prop);
+          } else {
+            input.setAttribute('data-selected-property', prop);
+            input.setAttribute('placeholder', `Значение ${prop}`);
+            positionSuggestionBox(); // Позиционируем suggestionBox
+            showSuggestions(prop);
+          }
+          let styleValue = input.value;
+          let selectedProperty = input.getAttribute('data-selected-property');
+          if (Object.keys(properties).includes(selectedProperty) && styleValue) {
+            applyStyle(selectedProperty, styleValue);
+          }
+        } else {
+          if (Object.keys(properties).includes(prop)) {
+            if (prop === 'background-image') {
+              box.style.backgroundImage = '';
             } else {
-                if (Object.keys(properties).includes(prop)) {
-                    if (prop === 'background-image') {
-                        box.style.backgroundImage = '';
-                    } else {
-                        box.style[prop] = ''; // Remove the style
-                    }
-                    console.log(`Removed ${prop} from the box`);
-                }
+              box.style[prop] = ''; // Удаляем стиль
             }
-        });
+            console.log(`Removed ${prop} from the box`);
+          }
+        }
+      });
     }
   });
+  
 
 input.addEventListener("input", () => {
   if (input.value === '') {
-      Object.keys(properties).forEach(prop => {
-          if (box.style[prop]) {
-              if (prop === 'background-image') {
-                  box.style.backgroundImage = '';
-              } else {
-                  box.style[prop] = ''; // Remove the style
-              }
-              console.log(`Removed ${prop} from the box due to empty input`);
-          }
-      });
+    Object.keys(properties).forEach(prop => {
+      if (box.style[prop]) {
+        if (prop === 'background-image') {
+          box.style.backgroundImage = '';
+        } else {
+          box.style[prop] = ''; // Удаляем стиль
+        }
+        console.log(`Removed ${prop} from the box due to empty input`);
+      }
+    });
   }
 });
-
