@@ -259,6 +259,9 @@ block content
             position: sticky;
             top: 0;
           }
+      p 
+        | Так как это сложное свойство, опробывать его вы можете на нашей 
+        a(href='./example.html') песочнице.
 
     section#margin.property
       h2 margin
@@ -328,6 +331,33 @@ block content
         | , который подключен к этом сайту.
         br
         | Вы можете из него брать анимации и тестировать их здесь 
+
+    section#transform.property
+      h2 transform
+      p Применяет 2D или 3D трансформацию к элементу.
+      pre
+        code.
+          transform: translate(50px, 100px); /* Перемещает элемент */
+          transform: rotate(45deg); /* Поворачивает элемент */
+          transform: scale(2); /* Масштабирует элемент */
+          transform: skew(20deg, 10deg); /* Наклоняет элемент */
+
+    section#visibility.property
+      h2 visibility
+      p Определяет видимость элемента.
+      pre
+        code.
+          visibility: visible; /* По умолчанию, элемент виден */
+          visibility: hidden; /* Элемент скрыт, но занимает место в макете */
+
+    section#opacity.property
+      h2 opacity
+      p Устанавливает уровень прозрачности элемента.
+      pre
+        code.
+          opacity: 1; /* По умолчанию, полностью непрозрачно */
+          opacity: 0.5; /* 50% непрозрачность */
+          opacity: 0; /* Полностью прозрачно */
     section#pseudo-elements.property
       h2 Псевдоэлементы
       p Используются для стилизации определенных частей элемента.
@@ -380,29 +410,3 @@ block content
             color: gray;
           }
 
-    section#transform.property
-      h2 transform
-      p Применяет 2D или 3D трансформацию к элементу.
-      pre
-        code.
-          transform: translate(50px, 100px); /* Перемещает элемент */
-          transform: rotate(45deg); /* Поворачивает элемент */
-          transform: scale(2); /* Масштабирует элемент */
-          transform: skew(20deg, 10deg); /* Наклоняет элемент */
-
-    section#visibility.property
-      h2 visibility
-      p Определяет видимость элемента.
-      pre
-        code.
-          visibility: visible; /* По умолчанию, элемент виден */
-          visibility: hidden; /* Элемент скрыт, но занимает место в макете */
-
-    section#opacity.property
-      h2 opacity
-      p Устанавливает уровень прозрачности элемента.
-      pre
-        code.
-          opacity: 1; /* По умолчанию, полностью непрозрачно */
-          opacity: 0.5; /* 50% непрозрачность */
-          opacity: 0; /* Полностью прозрачно */

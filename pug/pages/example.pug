@@ -1,0 +1,22 @@
+extends ../parts/main.pug
+block title
+    - var title="Тестовый полигон CSS"
+    - var css='../../other/css/style-example.css'
+block content   
+    #editor
+        h2 Редактор
+        label(for='style') Стили:
+        textarea#style.
+            .element {
+            }
+        br
+        label(for='script') Скрипты:
+        textarea#script.
+            let element = document.querySelector('.element');
+    
+        br
+        button(onclick='applyChanges()') Применить
+    #preview
+    h2 Превью
+    .container
+        .element#testElement

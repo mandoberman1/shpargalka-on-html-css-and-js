@@ -237,8 +237,9 @@ position: sticky; /* Фиксированное позиционирование
 .class {
   position: sticky;
   top: 0;
-}
-</code></pre>
+}</code></pre>
+        <p>
+           Так как это сложное свойство, опробывать его вы можете на нашей <a href="./example.html">песочнице.</a></p>
       </section>
       <section class="property" id="margin">
         <h2>margin</h2>
@@ -298,6 +299,29 @@ padding: 10px 20px 30px 40px; /* Устанавливает внутренние
         <p>
            Есть такой сайт <a href="https://animate.style">animate.style</a>, который подключен к этом сайту.<br>Вы можете из него брать анимации и тестировать их здесь </p>
       </section>
+      <section class="property" id="transform">
+        <h2>transform</h2>
+        <p>Применяет 2D или 3D трансформацию к элементу.</p>
+        <pre><code>transform: translate(50px, 100px); /* Перемещает элемент */
+transform: rotate(45deg); /* Поворачивает элемент */
+transform: scale(2); /* Масштабирует элемент */
+transform: skew(20deg, 10deg); /* Наклоняет элемент */
+</code></pre>
+      </section>
+      <section class="property" id="visibility">
+        <h2>visibility</h2>
+        <p>Определяет видимость элемента.</p>
+        <pre><code>visibility: visible; /* По умолчанию, элемент виден */
+visibility: hidden; /* Элемент скрыт, но занимает место в макете */
+</code></pre>
+      </section>
+      <section class="property" id="opacity">
+        <h2>opacity</h2>
+        <p>Устанавливает уровень прозрачности элемента.</p>
+        <pre><code>opacity: 1; /* По умолчанию, полностью непрозрачно */
+opacity: 0.5; /* 50% непрозрачность */
+opacity: 0; /* Полностью прозрачно */</code></pre>
+      </section>
       <section class="property" id="pseudo-elements">
         <h2>Псевдоэлементы</h2>
         <p>Используются для стилизации определенных частей элемента.</p>
@@ -345,31 +369,7 @@ padding: 10px 20px 30px 40px; /* Устанавливает внутренние
 :not(selector); /* Стилизует элемент, не являющийся указанным селектором */
 .example:not(.excluded) {
   color: gray;
-}
-</code></pre>
-      </section>
-      <section class="property" id="transform">
-        <h2>transform</h2>
-        <p>Применяет 2D или 3D трансформацию к элементу.</p>
-        <pre><code>transform: translate(50px, 100px); /* Перемещает элемент */
-transform: rotate(45deg); /* Поворачивает элемент */
-transform: scale(2); /* Масштабирует элемент */
-transform: skew(20deg, 10deg); /* Наклоняет элемент */
-</code></pre>
-      </section>
-      <section class="property" id="visibility">
-        <h2>visibility</h2>
-        <p>Определяет видимость элемента.</p>
-        <pre><code>visibility: visible; /* По умолчанию, элемент виден */
-visibility: hidden; /* Элемент скрыт, но занимает место в макете */
-</code></pre>
-      </section>
-      <section class="property" id="opacity">
-        <h2>opacity</h2>
-        <p>Устанавливает уровень прозрачности элемента.</p>
-        <pre><code>opacity: 1; /* По умолчанию, полностью непрозрачно */
-opacity: 0.5; /* 50% непрозрачность */
-opacity: 0; /* Полностью прозрачно */</code></pre>
+}</code></pre>
       </section>
     </main>
     <footer>

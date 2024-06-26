@@ -35,6 +35,30 @@ for (var i = 0; i < accordions.length; i++) {
         }
     };
 }
+  
+function applyChanges() {
+    const styleContent = document.getElementById('style').value;
+    const scriptContent = document.getElementById('script').value;
+
+    // Применение стилей
+    let styleElement = document.getElementById('dynamicStyle');
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.id = 'dynamicStyle';
+        document.head.appendChild(styleElement);
+    }
+    styleElement.innerHTML = styleContent;
+
+    // Применение скриптов
+    let scriptElement = document.getElementById('dynamicScript');
+    if (scriptElement) {
+        scriptElement.remove();
+    }
+    scriptElement = document.createElement('script');
+    scriptElement.id = 'dynamicScript';
+    scriptElement.innerHTML = scriptContent;
+    document.body.appendChild(scriptElement);
+}
 
 
 const properties = {
@@ -209,3 +233,4 @@ input.addEventListener("input", () => {
       });
   }
 });
+
