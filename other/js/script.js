@@ -36,7 +36,7 @@ if(accordions){
   }
 }
 
-if(box){
+if(input){
   const properties = {
     'color': ['red', 'blue', 'green', 'yellow', 'black', 'white'],
     'font-size': ['12px', '14px', '16px', '18px', '20px', '24px'],
@@ -275,30 +275,5 @@ if(mybutton){
   function topFunction() {
       document.body.scrollTop = 0; // Для Safari
       document.documentElement.scrollTop = 0; // Для Chrome, Firefox, IE и Opera
-  }
-}
-if(navigation){
-  let currentPage = location.pathname.split('/').pop();
-  let navIndex = document.querySelector('.nav-index');
-  let navHtml = document.querySelector('.nav-html');
-  let navCss = document.querySelector('.nav-css');
-  let navJs = document.querySelector('.nav-js');
-
-  if (currentPage === 'index.html') {
-    document.addEventListener("DOMContentLoaded", function() {
-      navIndex.setAttribute('href', './index.html')
-      navHtml.setAttribute('href', './html/pages/html.html')
-      navCss.setAttribute('href', './html/pages/css.html')
-      navJs.setAttribute('href', './html/pages/js.html')
-    });
-  }
-
-  if (currentPage === "css.html" || currentPage === "js.html" || currentPage === "html.html") {
-    document.addEventListener("DOMContentLoaded", function() {
-      navIndex.setAttribute('href', '../../index.html')
-      navHtml.setAttribute('href', './html.html')
-      navCss.setAttribute('href', './css.html')
-      navJs.setAttribute('href', './js.html')
-    });
   }
 }
