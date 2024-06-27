@@ -57,6 +57,8 @@ body {
 }
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .name{
     text-align: center;
@@ -82,6 +84,11 @@ pre {
 
 .property {
     margin: 20px 0;
+}
+@media(max-width: 768px){
+    .main{
+        justify-self: center;
+    }
 }
 @import '../parts/navigation.less';
 @import '../parts/footer.less';

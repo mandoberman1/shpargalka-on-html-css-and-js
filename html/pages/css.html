@@ -54,7 +54,7 @@
         <button> 
           <h5 class="name">Остальное</h5>
         </button>
-        <div class="dropdown-content"><a href="#pseudo-elements">Псевдоэлементы</a><a href="#pseudo-selector">Псевдоселекторы</a><a href="#visibility">visibility</a><a href="#opacity">opacity</a></div>
+        <div class="dropdown-content"><a href="#pseudo-elements">Псевдоэлементы</a><a href="#pseudo-classes">Псевдок лассы</a><a href="#visibility">visibility</a><a href="#opacity">opacity</a></div>
       </div>
       <div class="nav-item">
         <button> 
@@ -257,16 +257,84 @@ padding: 10px 20px 30px 40px; /* Устанавливает внутренние
 </code></pre>
       </section>
       <section class="property" id="flexbox">
-        <h2>flexbox</h2>
+        <h2>Flexbox</h2>
         <p>Модель раскладки для упорядочивания элементов предсказуемым образом.</p>
-        <pre><code>display: flex; /* Включает раскладку flexbox */
-.container {
+        <p><code>display: flex; </code>Включает раскладку flexbox.<br></p>
+        <pre><code>.container {
   display: flex;
-  justify-content: center; /* Центрирует элементы по горизонтали */
-  align-items: center; /* Центрирует элементы по вертикали */
-  flex-direction: row; /* Направление по умолчанию, может быть column для вертикальной раскладки */
 }
 </code></pre>
+        <p><code>flex-direction </code>Определяет направление главной оси.<br></p>
+        <pre><code>.container {
+  flex-direction: row; /* Направление по умолчанию */
+  flex-direction: row-reverse; /* Обратное направление */
+  flex-direction: column; /* Вертикальная раскладка */
+  flex-direction: column-reverse; /* Обратная вертикальная раскладка */
+}
+</code></pre>
+        <p><code>justify-content </code>Выравнивает элементы вдоль главной оси.<br></p>
+        <pre><code>.container {
+  justify-content: flex-start; /* По умолчанию */
+  justify-content: flex-end; /* К концу контейнера */
+  justify-content: center; /* По центру */
+  justify-content: space-between; /* С равными промежутками между элементами */
+  justify-content: space-around; /* С равными промежутками вокруг элементов */
+  justify-content: space-evenly; /* С равномерными промежутками */
+}
+</code></pre>
+        <p><code>align-items </code>Выравнивает элементы вдоль поперечной оси.<br></p>
+        <pre><code>.container {
+  align-items: stretch; /* По умолчанию */
+  align-items: flex-start; /* К началу контейнера */
+  align-items: flex-end; /* К концу контейнера */
+  align-items: center; /* По центру */
+  align-items: baseline; /* По базовой линии текста */
+}
+</code></pre>
+        <p><code>align-self </code>Выравнивает отдельный flex-элемент вдоль поперечной оси.<br></p>
+        <pre><code>.item {
+  align-self: auto; /* Наследует значение align-items */
+  align-self: stretch; /* По умолчанию */
+  align-self: flex-start; /* К началу контейнера */
+  align-self: flex-end; /* К концу контейнера */
+  align-self: center; /* По центру */
+  align-self: baseline; /* По базовой линии текста */
+}
+</code></pre>
+        <p><code>flex-wrap </code>Определяет, как элементы будут переноситься на новую строку.<br></p>
+        <pre><code>.container {
+  flex-wrap: nowrap; /* По умолчанию */
+  flex-wrap: wrap; /* Перенос на новую строку */
+  flex-wrap: wrap-reverse; /* Обратный перенос */
+}
+</code></pre>
+        <p><code>align-content </code>Выравнивает строки элементов вдоль поперечной оси.<br></p>
+        <pre><code>.container {
+  align-content: stretch; /* По умолчанию */
+  align-content: flex-start; /* К началу контейнера */
+  align-content: flex-end; /* К концу контейнера */
+  align-content: center; /* По центру */
+  align-content: space-between; /* С равными промежутками между строками */
+  align-content: space-around; /* С равными промежутками вокруг строк */
+  align-content: space-evenly; /* С равномерными промежутками */
+}
+</code></pre>
+        <p><code>flex-grow </code>Определяет, как элемент будет увеличиваться в размерах относительно других.<br></p>
+        <pre><code>.item {
+  flex-grow: 1; /* Растет пропорционально */
+}
+</code></pre>
+        <p><code>flex-shrink </code>Определяет, как элемент будет уменьшаться в размерах относительно других.<br></p>
+        <pre><code>.item {
+  flex-shrink: 1; /* Уменьшается пропорционально */
+}
+</code></pre>
+        <p><code>flex-basis </code>Определяет начальный размер элемента.<br></p>
+        <pre><code>.item {
+  flex-basis: 100px; /* Начальный размер элемента */
+}</code></pre>
+        <p>
+           Так как это сложное свойство, опробывать его вы можете на нашей <a href="./example.html">песочнице.</a></p>
       </section>
       <section class="property" id="animation">
         <h2>animation</h2>
@@ -343,8 +411,8 @@ opacity: 0; /* Полностью прозрачно */</code></pre>
 .example::first-letter {
   font-size: 2em;
   color: red;
-}
-</code></pre>
+}</code></pre>
+        <p>Так как это сложное свойство, опробывать его вы можете на нашей <a href="./example.html">песочнице.</a></p>
       </section>
       <section class="property" id="pseudo-classes">
         <h2>Псевдоклассы</h2>
@@ -369,6 +437,8 @@ opacity: 0; /* Полностью прозрачно */</code></pre>
 .example:not(.excluded) {
   color: gray;
 }</code></pre>
+        <p>
+           Так как это сложное свойство, опробывать его вы можете на нашей <a href="./example.html">песочнице.</a></p>
       </section>
     </main>
     <footer>

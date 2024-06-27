@@ -1,16 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');  
 body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: all 0.4s ease;
+}
+.sandbox {
     display: flex;
+    height: 100vh;
 }
 #editor {
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #preview {
     width: 50%;
-    padding: 20px;
+    padding: 20px 20px;
     box-sizing: border-box;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid #e0e0e0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 textarea {
     width: 100%;
@@ -18,55 +31,54 @@ textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-family: monospace;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    resize: none;
 }
 .container {
-    width: 80%;
-    height: 400px;
-    margin: 50px auto;
-    border: 2px solid black;
-    position: relative;
-}
-.element {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: absolute;
-}
-body{
-    display: flex   ;
-}
-#editor {
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-#preview {
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    border-left: 1px solid #ccc;
-}
-#code {
     width: 100%;
     height: 300px;
-}
-#script {
-    width: 100%;
-    height: 100px;
-}
-.container {
-    width: 80%;
-    height: 400px;
     margin: 50px auto;
-    border: 2px solid black;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fafafa;
     position: relative;
+    top: -20px;
 }
-
-.element {
+h3{
+    padding: 10px;
+    font-family: 'Lobster', cursive;
+}
+h3 a{
+    cursor: pointer;
+}
+.elements{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.element1, .element2, .element3, .element4 {
     width: 100px;
     height: 100px;
-    background-color: red;
-    position: absolute;
+    border: 1px solid #333;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
 @import '../parts/navigation.less';
 @import '../parts/footer.less';
