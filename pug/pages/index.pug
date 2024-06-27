@@ -10,52 +10,52 @@ block title
     - var navCss='./html/pages/css.html'
     - var navJs='./html/pages/js.html'
 block content
-    .main-header
-      h1.main-name Шпаргалка по HTML, CSS, JS
-      p.main-text Компактный справочник для начинающих разработчиков.
+  .main-header
+    h1.main-name Шпаргалка по HTML, CSS, JS
+    p.main-text Компактный справочник для начинающих разработчиков.
 
-    main
-      section.content
-        article
-          h2 HTML
-          p Структура веб-страницы.
-          pre
-            | &lt;!DOCTYPE html&gt;
-            | &lt;html lang="en"&gt;
-            | &lt;head&gt;
-            |   &lt;meta charset="UTF-8"&gt;
-            |   &lt;title&gt;Пример&lt;/title&gt;
-            | &lt;/head&gt;
-            | &lt;body&gt;
-            |   &lt;h1&gt;Привет, мир!&lt;/h1&gt;
-            | &lt;/body&gt;
-            | &lt;/html&gt;
+  main
+    section.content
+      article
+        h2 HTML
+        p Структура веб-страницы.
+        pre
+          | &lt;!DOCTYPE html&gt;
+          | &lt;html lang="en"&gt;
+          | &lt;head&gt;
+          |   &lt;meta charset="UTF-8"&gt;
+          |   &lt;title&gt;Пример&lt;/title&gt;
+          | &lt;/head&gt;
+          | &lt;body&gt;
+          |   &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+          | &lt;/body&gt;
+          | &lt;/html&gt;
 
-        article
-          h2 CSS
-          p Оформление и стилизация веб-страницы.
-          pre
-            | h1 {
-            |   color: #333;
-            |   font-size: 24px;
-            | }
-            | .class {
-            |   color: blue;
-            |   font-size: 300px;
-            | }
-            | #id {
-            |   background-color: gray;
-            |   font-family: 'Roboto', sans-serif;
-            | }
+      article
+        h2 CSS
+        p Оформление и стилизация веб-страницы.
+        pre
+          | h1 {
+          |   color: #333;
+          |   font-size: 24px;
+          | }
+          | .class {
+          |   color: blue;
+          |   font-size: 300px;
+          | }
+          | #id {
+          |   background-color: gray;
+          |   font-family: 'Roboto', sans-serif;
+          | }
 
-        article
-          h2 JavaScript
-          p Интерактивность на веб-странице.
-          pre
-            | document.querySelector('h1').addEventListener('click', function() {
-            |   alert('Привет, мир!');
-            | });
+      article
+        h2 JavaScript
+        p Интерактивность на веб-странице.
+        pre
+          | document.querySelector('h1').addEventListener('click', function() {
+          |   alert('Привет, мир!');
+          | });
 
-      aside.sidebar
-        h2.example-photo-main-name Пример изображения
-        img.example-photo-main(src="./media/example.jpg", alt="Пример изображения")
+    .photo
+      h2.example-photo-main-name Пример изображения
+      img.example-photo-main(src="./media/example.jpg", alt="Пример изображения")
