@@ -224,19 +224,20 @@ if(sandbox){
     // Применение стилей
     let styleElement = document.getElementById('dynamicStyle');
     if (!styleElement) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'dynamicStyle';
-        document.head.appendChild(styleElement);
+      styleElement = document.createElement('style');
+      styleElement.id = 'dynamicStyle';
+      document.head.appendChild(styleElement);
     }
     styleElement.innerHTML = styleContent;
   }
 
-    function redirectToPage(event) {
-      if (event.key === 'Shift' && event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
-        var previousPage = document.referrer;  // получение предыдущего url
-        window.location.href = previousPage; // перенаправление на предыдущий url
-      }
+  function redirectToPage(event) {
+    if (event.key === 'Shift' && event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
+      var previousPage = document.referrer;  // получение предыдущего url
+      window.location.href = previousPage; // перенаправление на предыдущий url
+    }
   }
+  document.addEventListener('keydown', redirectToPage);
 
   function applyScript() {
     const scriptContent = document.getElementById('script').value;
@@ -253,8 +254,9 @@ if(sandbox){
     scriptElement.innerHTML = scriptContent;
     document.body.appendChild(scriptElement);
   }
-
-  document.addEventListener('keydown', redirectToPage);
+  applyChanges();
+  applyScript()
+  
 }
 
 if(mybutton){

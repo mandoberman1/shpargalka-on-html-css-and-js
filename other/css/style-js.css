@@ -281,6 +281,7 @@ pre {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
+  z-index: 111;
   width: 100%;
   left: 0;
 }

@@ -12,20 +12,35 @@ block content
             h2 Редактор CSS:
             label(for='style') Стили:
             textarea#style(rows='10').
-                .elements{
-                    
+                .elements {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+                .element1, .element2, .element3, .element4 {
+                    width: 45%;
+                    height: 100px;
+                    border: 1px solid #333;
+                    text-align: center;
+                    line-height: 100px;
+                    background-color: #fff;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                    margin: 10px 0;
                 }
                 .element1{
-
+                
                 }
                 .element2{
-
+                
                 }
                 .element3{
-
+                
                 }
                 .element4{
-
+                
                 }
             br
             button(onclick='applyChanges()') Применить
@@ -37,4 +52,4 @@ block content
                     #testElement.element2 element2 
                     #testElement.element3 element3  
                     #testElement.element4 element4  
-                
+                        
