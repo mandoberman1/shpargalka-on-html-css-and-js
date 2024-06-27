@@ -1,31 +1,39 @@
-// Навигация
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const navigation = document.querySelector('.navigation')
 const sandbox = document.querySelector('.sandbox')
+const accordions = document.getElementsByClassName("accordion");
 
+let container = document.querySelector('.container-box');
+let box = document.querySelector('#box');
+let input = document.querySelector('#styleInput');
+let suggestionBox = document.querySelector('#suggestionBox');
+
+let mybutton = document.getElementById("scrollTopBtn");
+
+// Навигация
 if(navigation){
   burger.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
     burger.classList.toggle('toggle');
   });
-    
-  document.addEventListener('keydown', redirectToPage);
+}
 
-  var accordions = document.getElementsByClassName("accordion");
+if(accordions){
   for (var i = 0; i < accordions.length; i++) {
-      accordions[i].onclick = function() {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-              panel.style.maxHeight = null;
-          } else {
-              panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-      };
+    accordions[i].onclick = function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    };
   }
+}
 
-
+if(box){
   const properties = {
     'color': ['red', 'blue', 'green', 'yellow', 'black', 'white'],
     'font-size': ['12px', '14px', '16px', '18px', '20px', '24px'],
@@ -56,11 +64,6 @@ if(navigation){
     'visibility': ['visible', 'hidden'],
     'opacity': ['0', '0.5', '1']
   };
-
-  let container = document.querySelector('.container-box');
-  let box = document.querySelector('#box');
-  let input = document.querySelector('#styleInput');
-  let suggestionBox = document.querySelector('#suggestionBox');
 
   // Функция для позиционирования suggestionBox
   function positionSuggestionBox() {
@@ -195,7 +198,6 @@ if(navigation){
         });
       }
     });
-    
 
   input.addEventListener("input", () => {
     if (input.value === '') {
@@ -212,25 +214,63 @@ if(navigation){
     }
   });
 }
-function applyChanges() {
-  const styleContent = document.getElementById('style').value;
-
-  // Применение стилей
-  let styleElement = document.getElementById('dynamicStyle');
-  if (!styleElement) {
-      styleElement = document.createElement('style');
-      styleElement.id = 'dynamicStyle';
-      document.head.appendChild(styleElement);
-  }
-  styleElement.innerHTML = styleContent;
-}
 if(sandbox){
-  function redirectToPage(event) {
-    if (event.key === 'Shift' && event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
-      var previousPage = document.referrer;  // получение предыдущего url
-      window.location.href = previousPage; // перенаправление на предыдущий url
+  function applyChanges() {
+    const styleContent = document.getElementById('style').value;
+
+    // Применение стилей
+    let styleElement = document.getElementById('dynamicStyle');
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.id = 'dynamicStyle';
+        document.head.appendChild(styleElement);
     }
+    styleElement.innerHTML = styleContent;
+  }
+
+    function redirectToPage(event) {
+      if (event.key === 'Shift' && event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
+        var previousPage = document.referrer;  // получение предыдущего url
+        window.location.href = previousPage; // перенаправление на предыдущий url
+      }
+  }
+
+  function applyScript() {
+    const scriptContent = document.getElementById('script').value;
+
+    // Удаление предыдущего скрипта, если он существует
+    let scriptElement = document.getElementById('dynamicScript');
+    if (scriptElement) {
+      document.body.removeChild(scriptElement);
+    }
+
+    // Создание нового скрипта
+    scriptElement = document.createElement('script');
+    scriptElement.id = 'dynamicScript';
+    scriptElement.innerHTML = scriptContent;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('keydown', redirectToPage);
 }
-  
-document.addEventListener('keydown', redirectToPage);
+
+if(mybutton){
+  // Функция показа кнопки при прокрутке вниз
+  window.onscroll = function() {
+      scrollFunction();
+  };
+
+  function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+      } else {
+          mybutton.style.display = "none";
+      }
+  }
+
+  // Функция прокрутки наверх
+  function topFunction() {
+      document.body.scrollTop = 0; // Для Safari
+      document.documentElement.scrollTop = 0; // Для Chrome, Firefox, IE и Opera
+  }
 }

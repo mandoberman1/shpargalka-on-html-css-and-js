@@ -322,3 +322,38 @@ footer {
   bottom: 0;
   width: 100%;
 }
+#scrollTopBtn {
+  display: none;
+  /* Скрываем кнопку по умолчанию */
+  position: fixed;
+  /* Фиксируем кнопку в нижнем правом углу */
+  bottom: 60px;
+  right: 30px;
+  z-index: 99;
+  /* Устанавливаем приоритет отображения */
+  border: none;
+  /* Убираем границу */
+  outline: none;
+  /* Убираем обводку */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Черный полупрозрачный фон */
+  color: white;
+  /* Белый текст */
+  cursor: pointer;
+  /* Указатель в виде руки */
+  padding: 15px;
+  /* Отступы */
+  border-radius: 50%;
+  /* Скругленные углы */
+  font-size: 20px;
+  /* Размер шрифта */
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  /* Плавный переход для фона */
+  width: 50px;
+  height: 60px;
+}
+#scrollTopBtn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Более темный фон при наведении */
+}

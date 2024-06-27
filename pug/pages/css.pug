@@ -3,6 +3,7 @@ block title
     - var title="Документация по CSS"
     - var css='../../other/css/style-css.css'
     - var Css="active"
+    - var logo='../../media/css.png'
 block content
   .nav-container
     .nav-item
@@ -54,7 +55,7 @@ block content
         h5.name Остальное
       .dropdown-content
         a(href="#pseudo-elements") Псевдоэлементы
-        a(href="#pseudo-classes") Псевдок лассы
+        a(href="#pseudo-classes") Псевдоклассы
         a(href="#visibility") visibility
         a(href="#opacity") opacity
     .nav-item
@@ -72,6 +73,12 @@ block content
     input#styleInput(type='text', placeholder='Соверши прокрутку')
     #suggestionBox.suggestion-box(display='')
   main
+    section 
+      h2 Испытание
+      p 
+        |В мобильной версии вы можете опробывать CSS свойства в нашей 
+        a(href='example-css.html') песочнице  
+        | )
     section#color.property
       h2 color
       p Задает цвет текста.
@@ -125,7 +132,8 @@ block content
           text-align: left; /* Выравнивание текста по левому краю */
           text-align: center; /* Центрирование текста */
           text-align: right; /* Выравнивание текста по правому краю */
-          text-align: justify; /* Растягивает строки так, чтобы каждая строка имела одинаковую ширину */
+          text-align: justify; /* Растягивает строки так,
+           чтобы каждая строка имела одинаковую ширину */
 
     section#font-style.property
       h2 font-style
@@ -141,8 +149,10 @@ block content
       p Определяет шрифт для текста.
       pre
         code.
-          font-family: Arial, sans-serif; /* Устанавливает шрифт Arial с запасным вариантом sans-serif */
-          font-family: 'Times New Roman', serif; /* Устанавливает шрифт Times New Roman с запасным вариантом serif */
+          font-family: Arial, sans-serif; /* Устанавливает шрифт Arial
+           с запасным вариантом sans-serif */
+          font-family: 'Times New Roman', serif; /* Устанавливает шрифт
+           Times New Roman с запасным вариантом serif */
 
     section#filter.property
       h2 filter
@@ -214,10 +224,11 @@ block content
 
     section#background-image.property
       h2 background-image
-      p Устанавливает фоновое изображение для элемента. В поле ввода вы можете вставить ссылку на фото.
+      p Устанавливает фоновое изображение для элемента.
       pre
         code.
           background-image: url('image.jpg или ссылка'); /* Устанавливает фоновое изображение */
+      p В поле ввода вы можете вставить ссылку на фото.
 
     section#background-color.property
       h2 background-color
@@ -225,13 +236,15 @@ block content
       pre
         code.
           background-color: blue; /* Устанавливает синий фоновый цвет */
-          background-color: #00FF00; /* Устанавливает фоновый цвет с использованием шестнадцатеричного значения */
-          background-color: rgba(0, 0, 255, 0.5); /* Устанавливает фоновый цвет с использованием значения RGBA с 50% непрозрачностью */
+          background-color: #00FF00; /* Устанавливает фоновый цвет
+           с использованием шестнадцатеричного значения */
+          background-color: rgba(0, 0, 255, 0.5); /* Устанавливает фоновый цвет
+           с использованием значения RGBA с 50% непрозрачностью */
 
     section#position.property
       h2 position
       p
-        | Позволяет задавать тип позиционирования элемента. Доступны следующие значения:<br> POSITION:
+        | Позволяет задавать тип позиционирования элемента. Доступны следующие значения:
       pre
         code.
           position: absolute; /* Абсолютное позиционирование от краев страницы */
@@ -240,27 +253,30 @@ block content
             top: 10px;
           }
 
-          position: relative; /* Относительное позиционирование от начального местоположения */
+          position: relative; /* Относительное позиционирование
+           от начального местоположения */
           .class {
             position: relative;
             left: 10px;
           }
 
-          position: fixed; /* Фиксированное позиционирование от краев страницы, не реагирует на прокрутку */
+          position: fixed; /* Фиксированное позиционирование
+           от краев страницы, не реагирует на прокрутку */
           .class {
             position: fixed;
             bottom: 100px;
             z-index: 1; /* Порядок наложения */
           }
 
-          position: sticky; /* Фиксированное позиционирование, останавливается в пределах родительского блока */
+          position: sticky; /* Фиксированное позиционирование,
+           останавливается в пределах родительского блока */
           .class {
             position: sticky;
             top: 0;
           }
       p 
         | Так как это сложное свойство, опробывать его вы можете на нашей 
-        a(href='./example.html') песочнице.
+        a(href='./example-css.html') песочнице.
 
     section#margin.property
       h2 margin
@@ -269,16 +285,20 @@ block content
         code.
           margin: 10px; /* Устанавливает отступ в 10 пикселей со всех сторон */
           margin: 10px 20px; /* Устанавливает вертикальные и горизонтальные отступы */
-          margin: 10px 20px 30px 40px; /* Устанавливает отступы для верха, справа, низа и слева */
+          margin: 10px 20px 30px 40px; /* Устанавливает отступы 
+           для верха, справа, низа и слева */
 
     section#padding.property
       h2 padding
       p Устанавливает область внутреннего отступа с четырех сторон элемента.
       pre
         code.
-          padding: 10px; /* Устанавливает внутренний отступ в 10 пикселей со всех сторон */
-          padding: 10px 20px; /* Устанавливает вертикальные и горизонтальные внутренние отступы */
-          padding: 10px 20px 30px 40px; /* Устанавливает внутренние отступы для верха, справа, низа и слева */
+          padding: 10px; /* Устанавливает внутренний отступ
+           в 10 пикселей со всех сторон */
+          padding: 10px 20px; /* Устанавливает вертикальные
+           и горизонтальные внутренние отступы */
+          padding: 10px 20px 30px 40px; /* Устанавливает внутренние отступы
+           для верха, справа, низа и слева */
 
     section#flexbox.property
       h2 Flexbox
@@ -410,7 +430,7 @@ block content
           }
       p 
         | Так как это сложное свойство, опробывать его вы можете на нашей 
-        a(href='./example.html') песочнице.
+        a(href='./example-css.html') песочнице.
 
     section#animation.property
       h2 animation
@@ -434,7 +454,8 @@ block content
           .class {
             animation-name: имяАнимации;
             animation-duration: 1s; /* Длительность */
-            animation-timing-function: linear; /* Скорость(linear-постоянная, ease-замедление=>ускорение=>замедление,
+            animation-timing-function: linear; /* Скорость(linear-постоянная,
+             ease-замедление=>ускорение=>замедление,
               ease-in-медленно=>ускорение, ease-out-быстро=>замедление) */
             animation-delay: 1s; /* Задержка */
             animation-iteration-count: infinite; /* Кол-во повторение(infinite-бесконечно) */
@@ -503,7 +524,7 @@ block content
           }
       p
         |Так как это сложное свойство, опробывать его вы можете на нашей 
-        a(href='./example.html') песочнице.
+        a(href='./example-css.html') песочнице.
 
     section#pseudo-classes.property
       h2 Псевдоклассы
@@ -532,5 +553,5 @@ block content
           }
       p 
         | Так как это сложное свойство, опробывать его вы можете на нашей 
-        a(href='./example.html') песочнице.
+        a(href='./example-css.html') песочнице.
 
