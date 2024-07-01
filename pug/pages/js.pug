@@ -16,7 +16,7 @@ block content
             h2 Испытание
             p 
                 |В мобильной версии вы можете опробывать JavaScript в нашей 
-                a(href='example-js.html') песочнице  
+                a(href='../../example.html') песочнице  
                 | )
         section#add
             h2 Подключение
@@ -29,7 +29,7 @@ block content
                     br
                     |   /* код */
                     | &lt;/script&gt;
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#main-commands
             h2 Основные команды
             p
@@ -62,7 +62,7 @@ block content
             pre
                 code.  
                     let имяПеременной = +prompt() /* записывает введённое как число */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#variables
             h2 Переменные
             p 
@@ -72,7 +72,7 @@ block content
                     | let имяПеременной = значение; /* можно менять значение */
                     | const имяПеременной = значение; /* нельзя менять значение, обязательно сразу ввести значение */
                     | var имяПеременной = значение;    /* локальная переменная только на одном уровне или выше */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#math-operations
             h2 Математические операции
             p
@@ -93,7 +93,7 @@ block content
                     | let result = a + b; /* будет 6 */
                     | alert(a + b) /* отобразится 6 */
                     | let example = 1 + '4' /* будет 14 т.к. если одно это строка, то и другое тоже.
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#comparison-operators
             h2 Операторы сравнения
             p 
@@ -110,7 +110,7 @@ block content
                     | <= -- меньше, либо равно
                     | /* Пример */
                     | if(example == 1)
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#conditional-operators
             h2 Условные операторы
             p 
@@ -119,7 +119,7 @@ block content
                 code
                     | if (Условие) {действия}
                     | else {действия} /* если if не выполнилось */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#logical-operators
             h2 Логические операторы
             p 
@@ -131,7 +131,7 @@ block content
                     | /* Пример */
                     | if(15 > 10 && 15 < 11){} /* действие не выполнится */
                     | if(15 > 10 || 15 < 11){} /* действие выполнится */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#data-types
             h2 Типы данных
             p 
@@ -142,7 +142,7 @@ block content
                     | toString(имяПеременной) -- преобразование в строку
                     | parseInt(имяПеременной) -- преобразование в число
                     | isNaN(имяПеременной) -- проверка на числовой тип данных /* возвращает true если переменная не число */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#get-elements
             h2 Получение элементов
             p 
@@ -154,7 +154,7 @@ block content
                     | let имяПеременной = document.getElementsByTagName('tag')
                     | let имяПеременной = document.querySelector('.class/#id/tag') /* универсально, только первый попавшийся элемент */
                     | let имяПеременной = document.querySelectorAll('.class/#id/tag') /* универсально, все элементы */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#functions
             h2 Функции
             p 
@@ -169,7 +169,7 @@ block content
                     | }
                     | Вызов:
                     | имяФункции(значение переменной имяПеременной)
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#arrays
             h2 Массивы
             p
@@ -179,7 +179,7 @@ block content
                     | let имяПеременной = ['значение', ...] /* Создание массива */
                     | имяПеременной[0/1/2/...] /* обращение к элементу, у каждого элемента есть индекс (начало с нуля) */
                     | имяПеременной.length -- узнать длину массива
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#array-methods
             h2 Методы массивов
             p 
@@ -191,7 +191,7 @@ block content
                     | имяПеременной.pop() /* удаление последнего элемента */
                     | имяПеременной.shift() /* удаление первого элемента */
                     | имяПеременной.splice(индекс с которого начинается удаление, кол-во удаляемых) /* удаление нескольких элементов */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#objects
             h2 Объекты
             p   
@@ -205,7 +205,7 @@ block content
                     | имяОбъекта.имяПеременной /* доступ к свойству */
                     | this.имяПеременной /* доступ к свойству именно из этого объекта */
                     |имяМетода() {действия} /* функция */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#element-content
             h2 Контент внутри элементов
             p 
@@ -218,7 +218,7 @@ block content
                     | HTML:
                     | имяПеременной.innerHTML /* получение содержимого */
                     | имяПеременной.innerHTML = 'Текст<strong>что-то</strong>' /* изменение содержимого */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#universal-methods
             h2 Универсальные методы
             p 
@@ -229,7 +229,7 @@ block content
                     | имяПеременной.getAttribute('Название атрибута') /* получение значения атрибута */
                     | имяПеременной.setAttribute('название атрибута', 'значение') /* присвоение нового атрибута или переопределение значения */
                     | имяПеременной.removeAttribute('Название атрибута') /* удаление атрибута */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#classlist
             h2 classList
             p   
@@ -242,7 +242,7 @@ block content
                     | имяПеременной.classList.remove('class', 'class2', 'class3') /* удаление одного или нескольких классов */
                     | имяПеременной.classList.contains('main тип того') /* проверка наличия класса */
                     | имяПеременной.classList.toggle('main тип того') /* переключение класса т.е. удаление или добавление */
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#reminders
             h2 Метод forEach  
             p 
@@ -255,7 +255,7 @@ block content
                     | имяМассива.forEach(function(item) {
                     |     console.log(item)
                     | })
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#return
             h2 Возврат значений (return)
             p 
@@ -275,7 +275,7 @@ block content
                     | }
                     br
                     | let результат = сумма(5, 3); // результат будет 8
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#loops
             h2 Циклы
             p 
@@ -314,7 +314,7 @@ block content
                     | &nbsp;&nbsp;j++;
                     br
                     | } while (j < 5);
-            a(href='example-js.html') Песочница
+            a(href='../../example.html') Песочница
         section#events
             h2 События
             p 

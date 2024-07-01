@@ -11,8 +11,21 @@ let suggestionBox = document.querySelector('#suggestionBox');
 
 let mybutton = document.getElementById("scrollTopBtn");
 
+let vibor = document.querySelectorAll('.btn-vibor')
+let btnPreview = document.querySelector('.btn-preview')
 
+let redactors = document.querySelectorAll('.redactor')
+let preview = document.querySelector('.preview-container')
 
+// let btnHtml = document.querySelector('.html')
+// let btnCss = document.querySelector('.css')
+// let btnJs = document.querySelector('.js')
+// let btnResult = document.querySelector('.result')
+
+// let redactorHtml = document.querySelector('.redactor-html')
+// let redactorCss = document.querySelector('.redactor-css')
+// let redactorJs = document.querySelector('.redactor-js')
+// let preview = document.querySelector('.container')
 
 // Навигация
 if(navigation){
@@ -219,7 +232,7 @@ if(input){
 }
 if(sandbox){
   function applyChanges() {
-    const styleContent = document.getElementById('style').value;
+    const styleContent = document.getElementById('cssContent').value;
 
     // Применение стилей
     let styleElement = document.getElementById('dynamicStyle');
@@ -254,9 +267,57 @@ if(sandbox){
     scriptElement.innerHTML = scriptContent;
     document.body.appendChild(scriptElement);
   }
-  applyChanges();
-  applyScript()
+
+  function applyhtml() {
+    const htmlContent = document.getElementById('htmlContent').value;
+    const preview = document.getElementById('htmlPreview');
+    preview.innerHTML = htmlContent;
+  }
+
+  function applyAll() {
+    applyChanges();
+    applyScript();
+    applyhtml();
+  }
+  applyAll()
+  // btnHtml.addEventListener('click', function(){
+  //   if(btnHtml.classList.contains('active')){
+  //     btnHtml.classList.toggle('active')
+  //     redactorHtml.style.display = 'none'
+  //     return
+  //   }
+  //   if(!btnHtml.classList.contains('active')){
+  //     btnHtml.classList.toggle('active')
+  //     redactorHtml.style.display = 'flex'
+  //   }
+  // })
+  vibor.forEach(function(btn, index){
+    btn.addEventListener('click', function(){
+      let redactor = redactors[index]; // Соответствующий элемент .redactor
   
+      btn.classList.toggle('active'); // Переключаем класс active у кнопки
+  
+      // Переключаем видимость соответствующего элемента .redactor
+      if (redactor.style.display === 'none' || redactor.style.display === '') {
+        redactor.style.display = 'flex';
+      } else {
+        redactor.style.display = 'none';
+      }
+    });
+  });
+  
+  // Добавляем обработчик события для кнопки .btn-preview
+  btnPreview.addEventListener('click', function(){
+    if(btnPreview.classList.contains('active')){
+      btnPreview.classList.toggle('active')
+      preview.style.display = 'none'
+      return
+    }
+    if(!btnPreview.classList.contains('active')){
+      btnPreview.classList.toggle('active')
+      preview.style.display = 'flex'
+    }
+  })
 }
 
 if(mybutton){
