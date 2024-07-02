@@ -280,17 +280,6 @@ if(sandbox){
     applyhtml();
   }
   applyAll()
-  // btnHtml.addEventListener('click', function(){
-  //   if(btnHtml.classList.contains('active')){
-  //     btnHtml.classList.toggle('active')
-  //     redactorHtml.style.display = 'none'
-  //     return
-  //   }
-  //   if(!btnHtml.classList.contains('active')){
-  //     btnHtml.classList.toggle('active')
-  //     redactorHtml.style.display = 'flex'
-  //   }
-  // })
   vibor.forEach(function(btn, index){
     btn.addEventListener('click', function(){
       let redactor = redactors[index]; // Соответствующий элемент .redactor

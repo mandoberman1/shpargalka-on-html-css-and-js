@@ -32,6 +32,9 @@ pre {
   padding: 10px;
   border-left: 3px solid #333;
 }
+.nav-item {
+  width: 50% !important;
+}
 .property {
   margin: 20px 0;
 }
