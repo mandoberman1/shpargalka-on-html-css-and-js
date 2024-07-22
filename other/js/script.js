@@ -267,7 +267,7 @@ if(sandbox){
     scriptElement.innerHTML = scriptContent;
     document.body.appendChild(scriptElement);
   }
-
+  
   function applyhtml() {
     const htmlContent = document.getElementById('htmlContent').value;
     const preview = document.getElementById('htmlPreview');
